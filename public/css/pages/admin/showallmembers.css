@@ -1,0 +1,75 @@
+.roleContainer {
+  width: 100%;
+  height: 55px;
+  background: orange;
+  cursor: pointer;
+}
+
+.showrole {
+  color: #ffffff;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.allroles {
+  width: 100%;
+  height: 0;
+  background: orange;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.allroles a {
+  display: block;
+  text-transform: capitalize;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.allroles .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.showAllRole {
+  height: 40vh;
+}
+
+.selected {
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.memberContainer {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.memberTable {
+  width: 100%;
+  margin-top: 2%;
+}
+
+.memberTable td img {
+  width: 100px;
+  height: 100px;
+}
+
+.memberTable th {
+  background: orange;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=showallmembers.css.map */

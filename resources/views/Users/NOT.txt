@@ -1,0 +1,33 @@
+        <div class="section">
+            @foreach ($states as $item)
+            <div class="stateBox" style="background-image: linear-gradient(rgba(231, 68, 68, 0),black),url('{{ $item->backgroundImage }}')">
+                
+
+                <div class="title">
+                    {{ $item->stateName }}
+                    @can('SuperAndAdmin')
+                    @if ($item->show == 0)
+                    : hidden
+                    @else
+                    : showing
+                    @endif
+                    @endcan
+                </div>
+                @can('SuperAndAdmin')
+                    <div class="showBtns">
+                        @if ($item->show == 0)
+                        <a href="/admin/showlocation/state/{{ $item->id }}/show" class="f-jc-ac">show</a>
+                        @else
+                        <a href="/admin/showlocation/state/{{ $item->id }}/hide" class="f-jc-ac">hide</a>
+                    @endif
+                    </div>
+
+                    <form action="{{ route('admin.changeImage',$item->id) }}" method="get">
+                        <input type="text" name="backgoundImage" placeholder="enter image url">
+                        <button>submit</button>
+                    </form>
+                @endcan
+            </div>
+
+            @endforeach
+        </div>

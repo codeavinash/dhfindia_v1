@@ -1,0 +1,85 @@
+.Containersection {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.paralaxhead {
+  width: 100%;
+  height: 50vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(black)), url("https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190331-wa0169.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), black), url("https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190331-wa0169.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.paralaxhead h2 {
+  color: #ffffff;
+  text-transform: capitalize;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 1%;
+}
+
+.detailsContainer {
+  width: 100%;
+  height: 100vh;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.detailsContainer img {
+  height: 60%;
+}
+
+.bankDetaisContainer {
+  width: 40%;
+  height: 60%;
+  border: 3px solid orange;
+}
+
+.bankDetaisContainer h4 {
+  width: 100%;
+  height: 20%;
+  background: orange;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.bankDetaisContainer table {
+  width: 100%;
+  height: 80%;
+  border: none;
+}
+
+.bankDetaisContainer table th {
+  background: orange;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.bankDetaisContainer table td {
+  border: none;
+  padding-left: 2%;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+  .paralaxhead {
+    height: 30vh;
+  }
+  .detailsContainer {
+    height: auto;
+  }
+  .detailsContainer img {
+    width: 60%;
+  }
+  .bankDetaisContainer {
+    width: 100%;
+    height: 60vw;
+    margin-top: 5%;
+  }
+}
+/*# sourceMappingURL=donateUs.css.map */

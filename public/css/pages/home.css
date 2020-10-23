@@ -1,0 +1,223 @@
+.swiper-container {
+  width: 100%;
+  height: 100vh;
+  z-index: 97;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fullwidthBox {
+  width: 90%;
+  height: 60vh;
+  margin: 2% auto;
+}
+
+.fullwidthBox h2 {
+  margin-left: 2%;
+  text-transform: capitalize;
+  margin-bottom: 1%;
+}
+
+.borderBottom {
+  width: 60%;
+  height: 3px;
+  background: #525252;
+}
+
+.borderBottom div {
+  width: 40%;
+  height: 200%;
+  background: orange;
+  margin-left: 3%;
+}
+
+.fullContentBox {
+  width: 100%;
+  height: 80%;
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fullImageBox {
+  width: 40%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.fullTextBox {
+  width: 60%;
+  height: 100%;
+  padding-left: 2%;
+}
+
+.fullTextBox h4 {
+  margin-top: 2%;
+  margin-bottom: 5%;
+  text-transform: capitalize;
+}
+
+.fullTextBox p {
+  margin-bottom: 2%;
+}
+
+.vissionMissionBox {
+  width: 90%;
+  margin: 4% auto;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.vissionMissionBox div {
+  width: 40%;
+  height: 80%;
+  background: orange;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.74);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.74);
+  border-radius: 10px;
+  color: #fff;
+  padding: 2% 3%;
+}
+
+.vissionMissionBox div h2 {
+  margin-bottom: 5%;
+  text-transform: capitalize;
+}
+
+.paralaxBox {
+  width: 100%;
+  height: 50vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.589)), to(rgba(0, 0, 0, 0.589))), url("https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0022_orig.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.589)), url("https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0022_orig.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.paralaxBox h2 {
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 2px solid #aeaeae;
+  padding-bottom: 1%;
+}
+
+.postBox {
+  width: 90%;
+  height: 60vh;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 3%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.583);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.583);
+  position: relative;
+}
+
+.postBox div {
+  width: 100%;
+  height: 25%;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  padding: 0 5%;
+  text-transform: capitalize;
+}
+
+.postBox div h2 {
+  margin-bottom: 1%;
+}
+
+.youtubeBox {
+  width: 100%;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .swiper-container {
+    height: 40vh;
+  }
+  .fullwidthBox {
+    margin-top: 5%;
+    height: auto;
+  }
+  .fullwidthBox h2 {
+    font-size: 20px;
+  }
+  .fullContentBox {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .fullImageBox {
+    width: 100%;
+    height: 45vw;
+    margin-top: 5%;
+  }
+  .fullTextBox {
+    width: 100%;
+    height: auto;
+  }
+  .vissionMissionBox {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+  .vissionMissionBox div {
+    width: 100%;
+    margin-bottom: 5%;
+    padding: 5% 3%;
+  }
+  .vissionMissionBox div h2 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 1%;
+  }
+  .vissionMissionBox div p {
+    font-size: 15px;
+  }
+  .paralaxBox {
+    height: 30vh;
+  }
+  .postBox {
+    height: 30vh;
+    margin-bottom: 5%;
+  }
+  .postBox div {
+    height: 35%;
+    font-size: 10px;
+  }
+  .postBox div h2 {
+    font-size: 15px;
+  }
+}
+/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,124 @@
+.section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.stateCard {
+  width: 80%;
+  height: 25vw;
+  border-radius: 10px;
+  margin: 4% auto;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  -webkit-box-shadow: 2px 2px 6px black;
+          box-shadow: 2px 2px 6px black;
+}
+
+.redirect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+.title {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.editBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: rgba(0, 0, 0, 0.412);
+  z-index: 55 !important;
+  padding-top: 2%;
+}
+
+.editBox a {
+  width: 30%;
+  height: 30px;
+  background: #3c3c3c;
+  border-radius: 25px;
+  color: #ffffff;
+  margin-left: 2%;
+}
+
+.editBox input {
+  width: 60%;
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 2%;
+}
+
+.editBox button {
+  width: 20%;
+  height: 30px;
+}
+
+.districtTable {
+  width: 60%;
+  margin: 2% auto;
+}
+
+.districtTable th {
+  text-transform: capitalize;
+}
+
+.districtList {
+  width: 80%;
+  margin: 0 auto;
+  text-transform: capitalize;
+  list-style: none;
+  background: #919191;
+  padding: 2% 0;
+  padding-left: 2%;
+  margin-bottom: 5%;
+}
+
+.districtList strong {
+  font-size: 20px;
+}
+
+.districtList li {
+  margin-bottom: 1%;
+}
+
+.districtList li a {
+  color: #ffffff;
+}
+
+.districtList li a:hover {
+  border-bottom: 1px solid #ffffff;
+}
+
+.single {
+  margin-bottom: 0 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .stateCard {
+    width: 90%;
+    height: 40vh;
+  }
+  .editBox {
+    height: 40%;
+  }
+  .editBox input {
+    width: 70%;
+  }
+  .districtTable {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=otherMembers.css.map */

@@ -1,0 +1,82 @@
+.profileCard {
+  width: 80%;
+  min-height: 100vh;
+  margin: 2% auto;
+}
+
+.headInformation {
+  width: 90%;
+  height: 35vh;
+  margin: 0 auto;
+  border-bottom: 2px solid #434343;
+  text-align: center;
+  color: #434343;
+  text-transform: capitalize;
+}
+
+.headInformation img {
+  display: block;
+  height: 40%;
+  margin: 0 auto;
+  margin-bottom: 1%;
+}
+
+.headInformation strong {
+  text-transform: uppercase;
+}
+
+.headInformation h1 {
+  margin-top: 2%;
+}
+
+.backCircle {
+  width: 250px;
+  height: 250px;
+  margin: 2% auto;
+  border-radius: 50%;
+  background: #d5d5d5;
+  position: relative;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.563);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.563);
+}
+
+.backCircle div {
+  width: 85%;
+  height: 85%;
+  border: 8px solid orange;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+label[for=profilePic] {
+  width: 70px;
+  height: 70px;
+  background: orange;
+  color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.549);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.549);
+}
+
+.infoField {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.infoField strong {
+  font-size: 20px;
+}
+
+.infoField p {
+  font-size: 18px;
+}
+
+.infoField {
+  margin-top: 5%;
+}
+/*# sourceMappingURL=myProfile.css.map */

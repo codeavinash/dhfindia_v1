@@ -1,0 +1,186 @@
+.titleImage {
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-transform: capitalize;
+}
+
+.titleImage strong {
+  text-transform: uppercase;
+}
+
+.titleImage img {
+  margin: 2% 0;
+  height: 60px;
+  margin-bottom: 1%;
+}
+
+.titleImage p {
+  margin-bottom: 0.5%;
+}
+
+.formContainer {
+  display: inline-block;
+  margin: 2% 0;
+  width: 60%;
+  min-height: 40vw;
+  padding: 0 4%;
+  position: relative;
+}
+
+.formContainer label {
+  display: block;
+  text-transform: capitalize;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.formContainer input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #2e2e2e;
+}
+
+.formContainer input[type=file] {
+  border-bottom: none;
+}
+
+.formContainer button {
+  width: 40%;
+  height: 40px;
+  background: orange;
+  margin: 4% auto;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 6px black;
+          box-shadow: 2px 2px 6px black;
+}
+
+.formContainer textarea {
+  width: 100%;
+  outline: none;
+}
+
+.formTitle {
+  width: 100%;
+  height: 40px;
+  text-transform: capitalize;
+  color: #303030;
+  border-bottom: 1px solid #303030;
+}
+
+#profilePic {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 5%;
+  top: 6%;
+  width: 150px;
+  height: 170px;
+  border-radius: 5px;
+  border: 2px solid #303030;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.cutInput {
+  width: 78% !important;
+}
+
+.payment {
+  float: right;
+  width: 40%;
+  height: 80vw;
+  margin-top: 2%;
+  padding: 5%;
+}
+
+.payment img {
+  width: 80%;
+}
+
+.note {
+  color: red;
+}
+
+table {
+  width: 100%;
+  height: 20vw;
+  border: none;
+  background: orange;
+  margin-top: 10%;
+}
+
+table th {
+  background: orange;
+  text-transform: capitalize;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+table td {
+  border: none;
+  padding-left: 2%;
+  font-weight: 700;
+  border: 1px solid #ffffff;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+  .titleImage {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+  }
+  .titleImage strong {
+    font-size: 8px;
+  }
+  .titleImage img {
+    margin: 4% 0;
+    height: 40px;
+  }
+  .titleImage p {
+    font-size: 8px;
+  }
+  .formContainer {
+    width: 100%;
+  }
+  .formContainer label {
+    margin-top: 10%;
+  }
+  .formTitle {
+    text-align: center;
+  }
+  #profilePic {
+    position: relative;
+    margin-left: 5%;
+  }
+  .cutInput {
+    width: 100% !important;
+  }
+  .payment {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+  table {
+    height: 50vw;
+    font-size: 15px !important;
+  }
+}
+/*# sourceMappingURL=joinUs.css.map */

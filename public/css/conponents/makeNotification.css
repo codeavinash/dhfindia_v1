@@ -1,0 +1,36 @@
+.containerSection {
+  width: 80%;
+  height: 100vh;
+  border: 1px solid red;
+  margin: 0 auto;
+  text-transform: capitalize;
+}
+
+.containerSection ul {
+  list-style: none;
+}
+
+#notificationForm {
+  margin-top: 5%;
+}
+
+#notificationForm label {
+  display: block;
+  font-weight: 600;
+}
+
+#notificationForm input {
+  width: 100%;
+  height: 40px;
+}
+
+#notificationForm button {
+  display: block;
+  margin-top: 2%;
+}
+
+.submitbrn {
+  width: 15vw;
+  height: 3vw;
+}
+/*# sourceMappingURL=makeNotification.css.map */

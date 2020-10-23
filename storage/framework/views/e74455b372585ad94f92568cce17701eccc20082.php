@@ -1,0 +1,1 @@
+<?php echo e($user); ?><?php /**PATH /opt/lampp/htdocs/dhfindia/resources/views/Admin/Users/showSingleUser.blade.php ENDPATH**/ ?>
