@@ -36,7 +36,6 @@
                     <th>name</th>
                     <th>email</th>
                     <th>number</th>
-                    <th>delete user</th>
                     <th>update details</th>
                 </tr>
             
@@ -46,8 +45,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->number }}</td>
-                        <td><a href="">delete</a></td>
-                        <td><a href="{{ route('admin.updateUser',$user->id) }}">update</a></td>
+                        <td><a href="{{ route('admin.validateUser',$user->id) }}">update</a></td>
                     </tr>
                 @endforeach
             </table>

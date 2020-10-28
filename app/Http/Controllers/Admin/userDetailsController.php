@@ -99,10 +99,19 @@ class userDetailsController extends Controller
 
         $user = User::find($id);
         
-        $distic = StatesDistricts::find($user->dis_id);
-        $state = CountryStates::find($distic->state_id);
+        if($user->dis_id && $distic->state_id){
+            $distic = StatesDistricts::find($user->dis_id);
+            $state = CountryStates::find($distic->state_id);
+        }else{
+            $distic = false;
+            $state = false;
+        }
         $roles = $user->roles()->get();
-        $payment = $user->payment()->first();
+        if($user->payment()->first()){
+            $payment = $user->payment()->first();
+        }else{
+            $payment = false;
+        }
         $skills = $user->skills()->first();
 
         $user->district = $distic;

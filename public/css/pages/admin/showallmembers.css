@@ -72,4 +72,14 @@
   color: #ffffff;
   text-transform: capitalize;
 }
+
+@media only screen and (max-width: 600px) {
+  .memberTable {
+    width: 95vw;
+  }
+  .memberTable img {
+    width: 50px;
+    height: auto;
+  }
+}
 /*# sourceMappingURL=showallmembers.css.map */

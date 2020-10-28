@@ -45,12 +45,12 @@
 
         <div class="showDetails">
             <strong>user state</strong>
-            <p>{{ $user->state->stateName }}</p>
+            <p>{{ $user->state->stateName ?? 'not registered' }}</p>
         </div>
 
         <div class="showDetails">
             <strong>user district</strong>
-            <p>{{ $user->district->districtsName }}</p>
+            <p>{{ $user->district->districtsName ?? 'not registered' }}</p>
         </div>
 
         <div class="showDetails">
@@ -71,16 +71,18 @@
 
         <div class="showDetails">
             <strong>user skills</strong>
-            <p><strong>blood group </strong> {{ $user->skills->bloodGroup }}</p>
-            <p><strong>date of birth </strong> {{ $user->skills->dob }}</p>
-            <strong>education </strong><p> {{ $user->skills->education }}</p>
-            <strong>skills </strong><p> {{ $user->skills->skills }}</p>
+            <p><strong>blood group </strong> {{ $user->skills->bloodGroup ?? 'not registered' }}</p>
+            <p><strong>date of birth </strong> {{ $user->skills->dob ?? 'not registered' }}</p>
+            <strong>education </strong><p> {{ $user->skills->education ?? 'not registered' }}</p>
+            <strong>skills </strong><p> {{ $user->skills->skills ?? 'not registered' }}</p>
         </div>
 
+        @if($user->payments)
         <div class="showDetails">
             <strong>payment proof</strong><br>
             <a href="{{ asset($user->payments->paymentResept) }}">click here to see</a>
         </div>
+        @endif
 
         <div class="showDetails">
             <strong>approve user</strong><br>

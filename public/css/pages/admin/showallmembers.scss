@@ -77,3 +77,16 @@ margin-top: 2%;
 // adviser 200
 // membership
 // volenter 100
+
+
+@media only screen and (max-width: 600px) {
+
+    .memberTable{
+        width:95vw;
+        img{
+            width: 50px;
+            height: auto;
+        }
+    }
+
+}

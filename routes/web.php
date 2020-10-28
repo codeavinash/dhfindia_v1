@@ -78,7 +78,6 @@ Route::prefix('admin')->name('admin')->middleware('can:managePost')->group(funct
 
 Route::prefix('admin')->name('admin')->middleware('can:SuperAndAdmin')->group(function () {
     Route::get('showalluser/{role}',[userDetailsController::class,'showall'])->name('.showallusers');
-    Route::get('update/{userid}',[userDetailsController::class,'updateUser'])->name('.updateUser');
     Route::get('otherMembers',[userDetailsController::class, 'showallStates'])->name('.showallStates');
     Route::get('showlocation/{type}/{id}/{action}',[userDetailsController::class,'showLocation'])->name('.locationoption');
     Route::get('changeimage/{id}',[userDetailsController::class,'changeImage'])->name('.changeImage');

@@ -16,7 +16,7 @@
         </div>
 
         <div class="backCircle f-jc-ac">
-            <div style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.392)),url('{{ asset(Auth::user()->profilepic) }}')"></div>
+            <div style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.392)),url('@if(Auth::user()->profilepic) {{ asset(Auth::user()->profilepic) }} @else https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png @endif')"></div>
             <form action="{{ route('user.changeProfile') }}" method="post" id="changeProfile" enctype="multipart/form-data">
                 @csrf
                 <label for="profilePic" class="f-jc-ac"><i class="im im-pencil"></i></label>
