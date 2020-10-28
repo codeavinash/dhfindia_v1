@@ -25,4 +25,10 @@
   background: #ffffff;
   margin-top: 2%;
 }
+
+@media only screen and (max-width: 600px) {
+  .notificationBox {
+    width: 90%;
+  }
+}
 /*# sourceMappingURL=verifyEmail.css.map */

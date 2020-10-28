@@ -166,7 +166,7 @@
 
 @media only screen and (max-width: 600px) {
   .swiper-container {
-    height: 40vh;
+    height: 30vh;
   }
   .fullwidthBox {
     margin-top: 5%;

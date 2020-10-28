@@ -11,7 +11,7 @@
 <div class="Contentcontainer">
 
     <div class="Contentsection">
-        <h3 class="headding"><i class="im im-award"></i>avinash is the best</h3>
+        <h3 class="headding"><i class="im im-award"></i>WELCOME TO DINBANDHU HELP FOUNDATION</h3>
         <div class="bottonBorder">
             <div></div>
         </div>

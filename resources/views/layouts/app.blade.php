@@ -108,23 +108,54 @@
 
     @yield('mianContent')
     
-    <div class="moreBox f-jc-ac">
-        <i class="im im-speech-bubble-comments"></i>
-    </div>
 
     <div class="footerBox">
         <div class="listcontainer f-ja-ac">
             <div>
                 <h3>contact details</h3>
                 <ul>
-                    <li></li>
+                    <li><a href="{{ route('contactUs') }}">click here to constact us</a></li>
+                    <li><strong>email :-</strong>dinbandhuhelpfoundation@gmail.com</li>
+                    <li><strong>call us on</strong></li>
+                    <li>
+                        <ul>
+                            <li>8319686409</li>
+                            <li>9111906974 </li>
+                            <li>9009560661</li>
+                            <li>9630878271</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div>
                 <h3>usefull links</h3>
+                <ul>
+                    <li><a href="">login</a></li>
+                    <li><a href="">create new account</a></li>
+                    <li><a href=""><strong>donate us</strong></a></li>
+                    <li><a href="">join us and become membe</a></li>
+                    <li><a href="">about us</a></li>
+                </ul>
             </div>
             <div>
                 <h3>social media</h3>
+                <div class="socialMediaLinks f-jb-ac">
+                    <a href="" class="soLink youtube f-jc-ac">
+                        <i class="im im-youtube"></i>
+                    </a>
+
+                    <a href="" class="soLink whatsApp f-jc-ac">
+                        <i class="im im-whatsapp"></i>
+                    </a>
+
+                    <a href="" class="soLink phone f-jc-ac">
+                        <i class="im im-phone"></i>
+                    </a>
+
+                    <a href="" class="soLink phone f-jc-ac">
+                        <i class="im im-facebook"></i>  
+                    </a>
+                </div>
             </div>
 
 

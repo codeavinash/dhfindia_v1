@@ -79,4 +79,21 @@ label[for=profilePic] {
 .infoField {
   margin-top: 5%;
 }
+
+@media only screen and (max-width: 600px) {
+  .headInformation img {
+    width: 60%;
+    height: auto;
+    margin: 5% auto;
+  }
+  .headInformation {
+    height: 50vw;
+  }
+  .profileCard {
+    width: 90%;
+  }
+  .backCircle {
+    margin: 5% auto;
+  }
+}
 /*# sourceMappingURL=myProfile.css.map */

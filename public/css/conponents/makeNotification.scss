@@ -1,7 +1,6 @@
 .containerSection{
     width: 80%;
     height: 100vh;
-    border: 1px solid red;
     margin: 0 auto;
     text-transform: capitalize;
     ul{
@@ -28,4 +27,10 @@
 .submitbrn{
     width: 15vw;
     height: 3vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .containerSection{
+    width: 90%;
+    }
 }

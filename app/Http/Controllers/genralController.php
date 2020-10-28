@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Mail\ContactUsMail;
+use Illuminate\Support\Facades\Mail;
+
+
 
 use Illuminate\Http\Request;
 
@@ -15,7 +19,9 @@ class genralController extends Controller
     }
 
     public function submitContactUs(Request $request){
-
-    return $request;
+    
+    Mail::to('dinbandhuhelpfoundation@gmail.com')->send(new ContactUsMail($request));
+    return new ContactUsMail($request);
+        
     }
 }

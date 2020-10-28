@@ -11,6 +11,7 @@ use App\Http\Controllers\UserNotification;
 use App\Models\BannerImage;
 use App\Models\PostCategory;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,9 @@ Route::get('/', function () {
     // return $posts;
     return view('welcome',['bannerimages'=>$bannerImges,'posts'=>$posts]);
 })->name('root');
+
+
+
 
 Auth::routes(['verify'=>true]);
 

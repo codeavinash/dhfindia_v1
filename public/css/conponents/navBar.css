@@ -252,6 +252,21 @@
   border-bottom: 2px solid #d3d3d3;
 }
 
+.listcontainer div ul {
+  color: #ffffff;
+  list-style: none;
+  text-transform: capitalize;
+  padding-left: 3%;
+}
+
+.listcontainer div ul a {
+  color: #c7c5c5;
+}
+
+.listcontainer div ul li {
+  margin-top: 3%;
+}
+
 .moreBox {
   width: 60px;
   height: 60px;
@@ -312,6 +327,33 @@
   display: none;
 }
 
+.socialMediaLinks {
+  width: 100% !important;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.soLink {
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+
+.youtube {
+  background: red;
+}
+
+.whatsApp {
+  background: lime;
+}
+
+.phone {
+  color: blue;
+  background: #dfdfdf;
+}
+
 @media only screen and (max-width: 600px) {
   .slider {
     width: 0;
@@ -339,6 +381,23 @@
   }
   #notificationBox {
     width: 80%;
+  }
+  .footerBox {
+    height: auto;
+  }
+  .listcontainer {
+    width: 90%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+  .listcontainer div {
+    width: 100%;
+    min-height: 30vw;
+    margin-top: 5%;
+  }
+  .listcontainer div li {
+    margin-top: 2%;
   }
 }
 /*# sourceMappingURL=navBar.css.map */
