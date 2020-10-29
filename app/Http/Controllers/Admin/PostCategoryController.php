@@ -102,7 +102,10 @@ class PostCategoryController extends Controller
 
         if($request->hasfile('thumbnailUrl')){
             // removing old image
-            unlink(public_path($cat->thumbnailUrl));
+
+            if($cat->thumbnailUrl){
+                unlink(public_path($cat->thumbnailUrl));
+            }
             // adding new image
             $image = $request->file('thumbnailUrl');
             $name = rand(10,10000).$image->getClientOriginalName();

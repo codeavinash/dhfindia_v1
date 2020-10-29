@@ -70,6 +70,9 @@ Route::prefix('admin')->name('admin')->middleware('can:managePost')->group(funct
     // USER INTERFACE ROUTES ==
     Route::resource('uioptions', uiController::class);
     Route::get('uiOptions/showallImage',[uiController::class,'showall'])->name('.showallimage');
+
+    Route::get('appriveComment/{id}',[PostController::class,'approveComments'])->name('.approveComments');
+    Route::get('disapprove/{id}',[PostController::class,'disapprove'])->name('.disapprove');
     
 });
 

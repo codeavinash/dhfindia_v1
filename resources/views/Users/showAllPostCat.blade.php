@@ -37,7 +37,7 @@
 @else
 <div class="BoxContainer f-ja-ac">
 @foreach ($postCat as $cat)
-    <div class="catBox backgoundImageStyle" style="background-image: linear-gradient(rgba(0, 0, 0, 0),black),url('{{ asset($cat->thumbnailUrl) }}')">
+    <div class="catBox backgoundImageStyle" style="background-image: linear-gradient(rgba(0, 0, 0, 0),black),url('@if($cat->thumbnailUrl){{asset($cat->thumbnailUrl)}}@else https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png @endif')">
         <div class="desBox">
             <h4>{{ $cat->name }}</h4>
             <p>{{ substr($cat->shortDescription, 0,  80) }}...</p>

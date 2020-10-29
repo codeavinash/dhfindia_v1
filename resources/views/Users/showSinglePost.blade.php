@@ -71,12 +71,29 @@
             @if (count($comments) < 1)
             no comments found be first to add one
             @else
-                @foreach ($comments as $comment)
+
+            @can('managePost')
+
+            @foreach ($comments as $comment)
+                    
+                    <strong>{{ $comment->userName }}</strong>
+                    <p>{{ $comment->userComment }}</p>
+                    <p>status : {{ $comment->status ?? 'disapprive' }}</p>
+                    <a href="{{ route('admin.approveComments',$comment->id) }}">approve</a><br>
+                    <a href="{{ route('admin.disapprove',$comment->id) }}">disapprove</a><br>
+                @endforeach
+            
+            @else
+
+            @foreach ($comments as $comment)
                     @if ($comment->status == "approved")
                     <strong>{{ $comment->userName }}</strong>
                     <p>{{ $comment->userComment }}</p>
                     @endif
                 @endforeach
+
+            @endcan
+                
             @endif
         </div>
     </div>

@@ -4,6 +4,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous" defer></script>
 <link rel="stylesheet" href="{{ asset('css/pages/users/joinUs.css') }}">
 <script src="{{ asset('js/pages/joinus.js') }}" defer></script>
+<script src="{{ asset('js/imagepreview.js') }}" defer></script>
+
 @endsection
 
 @section('mianContent')
@@ -26,8 +28,8 @@
 
             @csrf
 
-            <label for="picIn" id="profilePic" class="f-jc-ac" style="background-image:url('{{ asset(Auth::user()->profilepic) }}') "><i class="im im-cloud-upload"></i>upload a profile image</label>
-            <input type="file" name="profilePic" id="picIn" accept="image/x-png,image/gif,image/jpeg" class="no-display" >
+            <label for="picIn" id="profilePic" class="f-jc-ac imageBox" style="background-image:url('{{ asset(Auth::user()->profilepic) }}') "><i class="im im-cloud-upload"></i>upload a profile image</label>
+            <input type="file" name="profilePic" id="picIn" accept="image/x-png,image/gif,image/jpeg" class="no-display imageInputField" >
 
             <label for="fulname">enter name</label>
             <input type="text" name="fulname" id="fulname" class="cutInput" value="{{ Auth::user()->name }}" required>

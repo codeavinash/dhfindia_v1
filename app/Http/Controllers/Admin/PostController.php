@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PostCategory;
 use App\Models\Post;
+use App\Models\PostComments;
 
 
 class PostController extends Controller
@@ -140,5 +141,20 @@ class PostController extends Controller
 
         return redirect()->route('user.showallevents');
         // delete the post
+    }
+
+
+    public function approveComments($id){
+        $comment = PostComments::find($id);
+        $comment->status = 'approved';
+        $comment->save();
+        return redirect()->back()->with('success','comment approved ');
+    }
+
+    public function disapprove($id){
+        $comment = PostComments::find($id);
+        $comment->status = 'disapprove';
+        $comment->save();
+        return redirect()->back()->with('success','comment disapproved ');
     }
 }

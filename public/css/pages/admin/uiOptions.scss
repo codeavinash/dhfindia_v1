@@ -82,4 +82,21 @@
         font-size: 2vw;
         color: #ffffff;
     }
+} 
+
+@media only screen and (max-width: 600px) {
+
+    .containerBox{
+        width: 90%;
+        height: 70vw;
+    }
+    .buttoncontainer{
+        flex-wrap: wrap;
+        a{
+            width: 80%;
+            height: 50px;
+            margin: 4% 0;
+        }
+    }
+
 }

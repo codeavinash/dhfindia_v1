@@ -18,13 +18,11 @@ class PostCatagoryTableSeeder extends Seeder
 
         PostCategory::create([
             'name'=>'media Post',
-            'thumbnailUrl'=>'/networkingFiles/images/categoryImages/holdingImage.jpg',
             'shortDescription'=>'showing all media post'
         ]);
 
         PostCategory::create([
             'name'=>'our top posts',
-            'thumbnailUrl'=>'/networkingFiles/images/categoryImages/holdingImage.jpg',
             'shortDescription'=>'our top post goes here'
         ]);
     }
