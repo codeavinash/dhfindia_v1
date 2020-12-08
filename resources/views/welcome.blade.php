@@ -1,77 +1,230 @@
-@extends('layouts.app')
+@extends('layouts.app',['eventList'=> $eventList])
 
-@section('headerFiles')
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-<link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
-<script src="{{ asset('js/pages/home.js') }}" defer></script>
+@section('haederFiles')
+    <!-- adding page specific style and javascript -->
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <script src="{{ asset('js/index.js') }}" defer></script>
 @endsection
 
-@section('mianContent')
+@section('mainContent')
 
 <div class="swiper-container">
-    <div class="swiper-wrapper">
-        @if ($bannerimages)
-        @foreach ($bannerimages as $image)
-        <div class="swiper-slide" style="background-image: url('{{ asset($image->imageUrl) }}')"></div>
-           @endforeach
-            @else 
-          <div class="swiper-slide">sorry no image found</div>
-       @endif
+  <div class="swiper-wrapper">
+    <div class="swiper-slide animatedParent animated delay200ms fatten"  data-animation="flipInY" style="background-image: url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/result-1598855569772_orig.jpg');">
+        <div class="animated bounceInDown " style="width: 40px; height: 40px; background: red;">avinash</div>
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
+    <div class="swiper-slide" style="background-image: url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0026_orig.jpg');"></div>
+    <div class="swiper-slide" style="background-image: url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0026_orig.jpg');"></div>
+    
+    <div class="swiper-slide" style="background-image: url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0026_orig.jpg');"></div>
+
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+
+  <ul class="no-dislplay ThumbnailList">
+
+      <li>https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0026_orig.jpg</li>
+      <li>https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0026_orig.jpg</li>
+      <li>https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0026_orig.jpg</li>
+      <li>https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190607-wa0026_orig.jpg</li>
+  </ul>
 </div>
 
-  <div class="fullwidthBox">
-    <h2>title post image</h2>
-    <div class="borderBottom">
-      <div></div>
-    </div>
 
-    <div class="fullContentBox">
-      <div class="fullImageBox" style="background-image: url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/result-1598855569772_orig.jpg')">
-
-      </div>
-      <div class="fullTextBox">
-          <h4>information short discription</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eius nobis animi maxime ullam ut doloremque fugit, quae vel molestiae harum. Aspernatur possimus, debitis magnam inventore tempore aperiam ipsum est.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eius nobis animi maxime ullam ut doloremque fugit, quae vel molestiae harum. Aspernatur possimus, debitis magnam inventore tempore aperiam ipsum est.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="vissionMissionBox">
-    <div>
-      <h2>vission</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas suscipit autem earum? Fugiat repellat amet unde enim pariatur commodi nisi aut minima, praesentium eaque, nostrum magnam maiores voluptates incidunt itaque!</p>
-    </div>
-    <div>
-      <h2>mission</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas suscipit autem earum? Fugiat repellat amet unde enim pariatur commodi nisi aut minima, praesentium eaque, nostrum magnam maiores voluptates incidunt itaque!</p>
-    </div>
-  </div>
-
-  <div class="paralaxBox f-jc-ac">
-      <h2> our tage line goes here</h2>
-  </div>
-
-
-
-  @if ($posts)
-      @foreach ($posts as $post)
-      <a href="{{ route('user.showSinglePost',$post->id) }}">
-        <div class="postBox" style="background-image: linear-gradient(rgba(255, 255, 255, 0),black),url('{{ asset($post->thumbnailUrl) }}')">
-          <div>
-            <h2>{{ $post->name }}</h2>
-            <p>{{ $post->shortDescription }}</p>
+<div class="Overflow-main-card-container f jc ac" style="background-image: linear-gradient(rgba(255, 166, 0, 0.678),rgba(255, 166, 0, 0.678)),url('{{ asset('images/backgroundimageOne.jpg') }}');">
+  <div class="Overflow-main-container f ja ab animatedParent">
+      <div class="overflow-Card animated fadeInUpShort" >
+          <div class="Icon-Container f jc ac">
+              <img src="{{ asset('images/donation image one.svg') }}" alt="" srcset="">
           </div>
-          
+          <h2>card title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, numquam officiis! 
+              Harum distinctio sequi sunt molestiae dicta doloribus repudiandae esse at!</p>
+
+
+      </div>
+      <div class="overflow-Card animated fadeInUpShort" >
+          <div class="Icon-Container f jc ac">
+              <img src="{{ asset('images/donation image second.svg') }}" alt="" srcset="">
+          </div>
+          <h2>card title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, numquam officiis! 
+              Harum distinctio sequi sunt molestiae dicta doloribus repudiandae esse at!</p>
+
+
+      </div>
+
+      <div class="overflow-Card animated fadeInUpShort" >
+          <div class="Icon-Container f jc ac">
+              <img src="{{ asset('images/donation image three.svg') }}" alt="" srcset="">
+          </div>
+          <h2>card title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, numquam officiis! 
+              Harum distinctio sequi sunt molestiae dicta doloribus repudiandae esse at!</p>
+      </div>
+      
+  </div>
+</div>
+
+<div class="three-welcome-post-container">
+      <div class="three-welcome-post-content-container f ja ac animatedParent" >
+          <div class="Three-Imge-Grid-Container animated bounceInLeft delay-250">
+              <div class="Big-Imge-Container" style="background-image: url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190414-131127_orig.jpg');"></div>
+              <div style="background-image: url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190330-124428_orig.jpg');"></div>
+              <div style="background-image: url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190409-154530_orig.jpg');"></div>
+          </div>
+          <div class="three-text-box-container animated bounceInRight delay-250">
+              <h1>welcome to <strong>dinbandhu</strong> help foundation</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusamus, iusto explicabo libero pariatur commodi esse veritatis totam molestiae, itaque, rerum doloribus sunt alias consectetur facilis nostrum corporis omnis quod.</p>
+              <a href="" class="f jc ac">read more</a>
+          </div>
+      </div>
+</div>
+
+<div class="OurCause-section-container animatedParent">
+
+  <h2 class="animated fadeInDownShort delay-750">our <strong>recent</strong> post</h2>
+  <div class="Title-splitter f jc ac animated fadeInDownShort delay-750">
+      <div></div>
+      <img src="{{ asset('images/headingSplitter.svg') }}" alt="" srcset="">
+      <div></div>
+  </div>
+
+  <p class="cause-short-desscription animated fadeInDownShort delay-750">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus unde ut cumque fugiat mollitia dignissimos repellendus voluptatibus, ipsa, ducimus, optio officiis velit commodi explicabo dolorem laudantium voluptate esse? Odit, in.
+  </p>
+
+  <div class="post-Swipre-container animated fadeInDownShort delay-750">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide postBoxes">
+              <div class="post-image-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0),#ffffff),url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190409-154530_orig.jpg');"></div>
+              <div class="Post-text-container">
+                  <strong>likes : <span>100</span></strong>
+                  <h3>post title tem content here</h3>
+                  <p class="Post-Small-Description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dolorum recusandae exercitationem eligendi nulla, quod ducimus eos similique nihil quasi illum odio laborum?</p>
+                  <a href="" class=" f jc ac Slide-Post-read-Btn">read more</a>
+              </div>
+          </div>
+          <div class="swiper-slide postBoxes">
+              <div class="post-image-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0),#ffffff),url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190409-154530_orig.jpg');"></div>
+              <div class="Post-text-container">
+                  <strong>likes : <span>100</span></strong>
+                  <h3>post title tem content here</h3>
+                  <p class="Post-Small-Description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dolorum recusandae exercitationem eligendi nulla, quod ducimus eos similique nihil quasi illum odio laborum?</p>
+                  <a href="" class=" f jc ac Slide-Post-read-Btn">read more</a>
+              </div>
+          </div>
+
+          <div class="swiper-slide postBoxes">
+              <div class="post-image-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0),#ffffff),url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190409-154530_orig.jpg');"></div>
+              <div class="Post-text-container">
+                  <strong>likes : <span>100</span></strong>
+                  <h3>post title tem content here</h3>
+                  <p class="Post-Small-Description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dolorum recusandae exercitationem eligendi nulla, quod ducimus eos similique nihil quasi illum odio laborum?</p>
+                  <a href="" class=" f jc ac Slide-Post-read-Btn">read more</a>
+              </div>
+          </div>
+
+          <div class="swiper-slide postBoxes">
+              <div class="post-image-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0),#ffffff),url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190409-154530_orig.jpg');"></div>
+              <div class="Post-text-container">
+                  <strong>likes : <span>100</span></strong>
+                  <h3>post title tem content here</h3>
+                  <p class="Post-Small-Description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dolorum recusandae exercitationem eligendi nulla, quod ducimus eos similique nihil quasi illum odio laborum?</p>
+                  <a href="" class=" f jc ac Slide-Post-read-Btn">read more</a>
+              </div>
+          </div>
+
+          <div class="swiper-slide postBoxes">
+              <div class="post-image-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0),#ffffff),url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190409-154530_orig.jpg');"></div>
+              <div class="Post-text-container">
+                  <strong>likes : <span>100</span></strong>
+                  <h3>post title tem content here</h3>
+                  <p class="Post-Small-Description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dolorum recusandae exercitationem eligendi nulla, quod ducimus eos similique nihil quasi illum odio laborum?</p>
+                  <a href="" class=" f jc ac Slide-Post-read-Btn">read more</a>
+              </div>
+          </div>
+
+
+          <div class="swiper-slide postBoxes">
+              <div class="post-image-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0),#ffffff),url('https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190409-154530_orig.jpg');"></div>
+              <div class="Post-text-container">
+                  <strong>likes : <span>100</span></strong>
+                  <h3>post title tem content here</h3>
+                  <p class="Post-Small-Description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dolorum recusandae exercitationem eligendi nulla, quod ducimus eos similique nihil quasi illum odio laborum?</p>
+                  <a href="" class=" f jc ac Slide-Post-read-Btn">read more</a>
+              </div>
+          </div>
         </div>
-      </a>
-      @endforeach
-  @endif
+        <!-- Add Pagination -->
+        <div class="post-pagination"></div>
+  </div>
+</div>
 
+<div class="Center-Achivment-Box" style="background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url('{{ asset('images/backgroundimageTow.jpg') }}');">
 
+  <div class="Achivemnt-Counter-container f ja ac animatedParent">
+      <div class="f ja ac fc animated fadeInUp">
+          <img src="{{ asset('images/smileFace.svg') }}" alt="" srcset="">
+          <span class="Counter">100</span>
+          <h4>Hap<span>py Dona</span>tors</h4>
+      </div>
+      <div class="f ja ac fc animated fadeInUp delay-250">
+          <img src="{{ asset('images/RocketLaunch.svg') }}" alt="" srcset="">
+          <span class="Counter">100</span>
+          <h4>Suc<span>cess Miss</span>ion</h4>
+      </div>
+      <div class="f ja ac fc animated fadeInUp delay-500">
+          <img src="{{ asset('images/personMask.svg') }}" alt="" srcset="">
+          <span class="Counter">100</span>
+          <h4>Volu<span>nteer Reac</span>hed</h4>
+      </div>
+  </div>
 
+</div>
+
+<div class="OurCause-section-container">
+
+  <h2>image <strong>gallery</strong></h2>
+  <div class="Title-splitter f jc ac">
+      <div></div>
+      <img src="{{ asset('images/headingSplitter.svg') }}" alt="" srcset="">
+      <div></div>
+  </div>
+
+  <p class="cause-short-desscription">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus unde ut cumque fugiat mollitia dignissimos repellendus voluptatibus, ipsa, ducimus, optio officiis velit commodi explicabo dolorem laudantium voluptate esse? Odit, in.
+  </p>
+
+  <div class="image-galary-swip-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url(https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190331-wa0034_orig.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190331-wa0163_orig.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(https://dinbandhuhelpfoundation.weebly.com/uploads/1/2/5/1/125115490/img-20190331-wa0156_1_orig.jpg)"></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="image-swap-pagination"></div>
+    </div>
+</div>
+
+  <div class="PoweredBy-Container f jc ac">
+      <div class="PoweredBy-heading-Container f jc ac">
+          <h5>powered by</h5>
+      </div>
+      <div class="poweredby-slider-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="https://www.flaticon.com/svg/static/icons/svg/731/731985.svg" alt=""></div>
+              <div class="swiper-slide"><img src="https://www.flaticon.com/svg/static/icons/svg/2905/2905064.svg" alt=""></div>
+              <div class="swiper-slide"><img src="https://www.flaticon.com/svg/static/icons/svg/2905/2905064.svg" alt=""></div>
+              <div class="swiper-slide"><img src="https://www.flaticon.com/svg/static/icons/svg/2640/2640740.svg" alt=""></div>
+              <div class="swiper-slide"><img src="https://www.flaticon.com/svg/static/icons/svg/2640/2640740.svg" alt=""></div>
+              <div class="swiper-slide"><img src="https://www.flaticon.com/svg/static/icons/svg/2640/2640740.svg" alt=""></div>
+              
+            </div>
+            <!-- Add Pagination -->
+            <div class="powered-by-pagination"></div>
+      </div>
+
+  </div> 
 @endsection

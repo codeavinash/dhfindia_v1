@@ -6,6 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use App\Models\PostCategory;
 
 trait AuthenticatesUsers
 {
@@ -18,7 +19,10 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+
+        $eventList = PostCategory::all();
+
+        return view('auth.login',['eventList'=>$eventList]);
     }
 
     /**

@@ -1,12 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.app',[ 'eventList' =>$eventList]);
 
-@section('headerFiles')
 
-<link rel="stylesheet" href="{{ asset('css/pages/login.css') }}">
-<script src="{{ asset('js/components/removeNotification.js') }}" defer></script>
-@endsection
 
-@section('mianContent')
+@section('mainContent')
 
 <section class="f-jc-ac">
     <div class="formbox">

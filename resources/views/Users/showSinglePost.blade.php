@@ -1,105 +1,59 @@
-@extends('layouts.app')
+@extends('layouts.app',['eventList'=> $eventList])
 
-@section('headerFiles')
-
-<link rel="stylesheet" href="{{ asset('css/pages/users/showSingalPost.css') }}">
-@can('managePost')
-    {{-- <script src="{{ asset('js/pages/Admin/Posts/delete.js') }}" defer></script> --}}
-    <script defer>
-        let deletepost = ()=>{
-            $('#deleteForm').submit();
-        }
-    </script>
-    @endcan
-
+@section('haederFiles')
+    <link rel="stylesheet" href="{{ asset('css/singlePost.css') }}">
 @endsection
 
-@section('mianContent')
+@section('mainContent')
 
-@if ($post == null)
-    sorry no post found
-@else
+    <div class="single-Post-main-container animatedParent">
+        <div class="single-Post-thumbnail" style="background-image: url('{{ asset($post->thumbnailUrl) }}')"></div>
 
-@if (Session::has('message'))
-    <div class="notificationBox">
-        {{ Session::get('message') }}
-
-    </div>
-@endif
-
-@can('managePost')
-
-    
-
-    <form id="deleteForm" action="{{ route('adminpost.destroy',$post->id)}}" method="post" class="no-display">
-        @csrf
-        @method('DELETE')
-    </form>
-
-    <div class="toolsOptions">
-        <a href="{{ route('adminpost.edit',$post->id) }}" class="f-jc-ac"><i class="im im-edit"></i>edit post</a>
-        <span class="f-jc-ac" onclick="deletepost()"><i class="im im-trash-can"></i>delete post </span>
-    </div>
-@endcan
-
-
-<div class="postContainer">
-    <h1 class="headding"><img src="{{ asset('networkingFiles/svgs/logo.svg') }}" alt="">{{ $post->name }}</h1>
-    <div class="bottomBorder"><div></div></div>
-    <h4 class="shortdes">{{ $post->shortDescription }}</h4>
-    <div class="titleImage backgoundImageStyle" style="background-image: url('{{ asset($post->thumbnailUrl) }}')"></div>
-    <div class="likeBox"><a href="{{ route('user.addLike',$post->id) }}" id="likebtn" class="{{ $currentLike }} f-jc-ac"><i class="im im-facebook-like"></i> like {{ count($likes) }}</a><a href="#form" class="f-jc-ac"><i class="im im-speech-bubble-comments"></i> comment</a></div>
-
-    <div class="paracontainer">
-        {!! $post->description !!}
-    </div>
-
-<form action="{{ route('user.addnewcomment',$post->id)}}" method="post" class="addComment" id="form">
-    <div class="commentTitle">
-        <i class="im im-speech-bubble-comments"></i> add new comment
-    </div>
-    @csrf
-    <textarea name="commentBox"></textarea>
-    <button name="submit">add comment</button>
-</form>
-
-    <div class="commentBox">
-        <div class="commentTitle">
-            <i class="im im-speech-bubble-comments"></i> {{ count($comments) }}  comments
-        </div>
-        <div class="comments">
-            @if (count($comments) < 1)
-            no comments found be first to add one
-            @else
-
-            @can('managePost')
-
-            @foreach ($comments as $comment)
-                    
-                    <strong>{{ $comment->userName }}</strong>
-                    <p>{{ $comment->userComment }}</p>
-                    <p>status : {{ $comment->status ?? 'disapprive' }}</p>
-                    <a href="{{ route('admin.approveComments',$comment->id) }}">approve</a><br>
-                    <a href="{{ route('admin.disapprove',$comment->id) }}">disapprove</a><br>
-                @endforeach
-            
-            @else
-
-            @foreach ($comments as $comment)
-                    @if ($comment->status == "approved")
-                    <strong>{{ $comment->userName }}</strong>
-                    <p>{{ $comment->userComment }}</p>
-                    @endif
-                @endforeach
-
-            @endcan
+        <h1 class="single-post-title">{{ $post->name }}</h1>
+        <div class="single-post-reach-container f ja ac">
+            <a href=""><i class="im im-facebook-like"></i> like @if (count($likes))
+                <strong>: {{ count($likes) }}</strong>
+                @else
                 
-            @endif
+            @endif</a>
+            <a href="#commentBox"><i class="im im-speech-bubble-comment"></i>comment @if (count($comments))
+                <strong>: {{ count($comments) }}</strong>
+                @else
+                
+            @endif</a>
+
         </div>
+
+        <div class="p-text post-short-description animated flipInX">
+            {{ $post->shortDescription }} 
+        </div>
+
+        <div class="p-text post-full-descriptino">
+            {!! $post->description !!}
+        </div>
+
+        <div class="post-commet-spaec" id="commentBox">
+
+        </div>
+
+        <form action="{{ route('user.addnewcomment',$post->id)}}" method="post" class="single-post-addComment-container" id="form">
+            <div class="single-post-comment-title">
+                Leave a Comment
+            </div>
+            @csrf
+            <textarea name="commentBox" class="single-post-comment-textarea"></textarea>
+            <button name="submit" class="single-post-comment-submit">add comment</button>
+        </form>
+
+        <h4 class="single-post-comment-title">post comments :-</h4>
+
+        <div class="single-post-comments-box">
+            
+        </div>
+        <div class="single-post-comments-box">
+
+        </div>
+
     </div>
-
-</div>
-@endif
-
-
+    
 @endsection

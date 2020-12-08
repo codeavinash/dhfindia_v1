@@ -21,9 +21,10 @@ class userController extends Controller
     }
 
     public function showPostbycat($id){
-
-        $posts = PostCategory::where('id',$id)->first()->posts()->get();
-        return view('Users.showPostbycat',['posts'=>$posts]);
+        $eventCatagoryList = PostCategory::all();
+        $posts = PostCategory::where('id',$id)->first()->posts()->simplePaginate(10);
+        $postsCatName = PostCategory::where('id',$id)->first();
+        return view('Users.showPostbycat',['posts'=>$posts,'eventList'=>$eventCatagoryList,'postsCatName'=>$postsCatName]);
 
     }
 
@@ -31,13 +32,14 @@ class userController extends Controller
         $post = Post::where('id',$id)->firstOrFail();
         $likes = $post->alllikes()->get();
         $comments = $post->comments()->get();
+        $eventCatagoryList = PostCategory::all();
         if(auth()->user()){
             $currentUserLike = $post->alllikes()->where('user_id',auth()->user()->id)->first();
-        $currentUserLike == null ? '': $currentUserLike = 'liked' ;
+            $currentUserLike == null ? '': $currentUserLike = 'liked' ;
         }else{
             $currentUserLike ="";
         }
-        return view('Users.showSinglePost',['post'=>$post,'likes'=>$likes,'comments'=>$comments,'currentLike'=>$currentUserLike]);
+        return view('Users.showSinglePost',['post'=>$post,'likes'=>$likes,'comments'=>$comments,'currentLike'=>$currentUserLike,'eventList'=>$eventCatagoryList]);
     }
 
     public function addcomment( Request $request, $id){

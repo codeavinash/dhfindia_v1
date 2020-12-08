@@ -12,6 +12,7 @@ use App\Models\BannerImage;
 use App\Models\PostCategory;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,8 +27,9 @@ use App\Models\PostCategory;
 Route::get('/', function () {
     $bannerImges = BannerImage::all();
     $posts = PostCategory::where('id','2')->first()->posts()->orderBy('id', 'DESC')->get();
+    $eventCatagoryList = PostCategory::all();
     // return $posts;
-    return view('welcome',['bannerimages'=>$bannerImges,'posts'=>$posts]);
+    return view('welcome',['bannerimages'=>$bannerImges,'posts'=>$posts,'eventList'=>$eventCatagoryList]);
 })->name('root');
 
 

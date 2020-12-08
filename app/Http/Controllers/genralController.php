@@ -21,7 +21,7 @@ class genralController extends Controller
     public function submitContactUs(Request $request){
     
     Mail::to('dinbandhuhelpfoundation@gmail.com')->send(new ContactUsMail($request));
-    return return redirect()->back()->with('success','we will contact you as soon as possible');
+     return redirect()->back()->with('success','we will contact you as soon as possible');
         
     }
 }
