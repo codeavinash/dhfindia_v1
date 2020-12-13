@@ -1,0 +1,44 @@
+.aboutUs-content-container {
+  width: 80%;
+  min-height: 100vh;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.section-title-container {
+  width: 100%;
+  height: 30vh;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.section-title-text {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  font-family: 'Playfair Display SC', serif !important;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.aboutUs-text {
+  margin: 5% auto;
+  line-height: 200%;
+  font-size: 20px;
+  width: 80%;
+}
+
+.aboutUs-text strong {
+  color: orange;
+}
+
+.aboutUs-text-list {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.aboutUs-text-list li {
+  margin-bottom: 2%;
+}
+/*# sourceMappingURL=aboutus.css.map */

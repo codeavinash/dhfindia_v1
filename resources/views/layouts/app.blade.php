@@ -32,29 +32,29 @@
 <!-- navigation box star form here -->
 <nav class="Top-genral-navitaion-container">
     <div class="Top-ganral-navigation-social-links f ja ac">
-        <a href=""><i class="im im-facebook"></i></a>
-        <a href=""><i class="im im-instagram"></i></a>
-        <a href=""><i class="im im-youtube"></i></a>
-        <a href=""><i class="im im-twitter"></i></a>
+        <a href="https://www.facebook.com/Arunsahu3288/"><i class="im im-facebook"></i></a>
+        <a href="www.instagram.com/dinbandhu_help_foundation"><i class="im im-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCHM3Ksoi8q2vpgCrTaZEPhg"><i class="im im-youtube"></i></a>
+        <a href="https://twitter.com/DinbandhuHelp?s=09"><i class="im im-twitter"></i></a>
     </div>
 
     <div class="Top-genral-navigation-contactDetails-Btns f ja ac">
         <a href=""><i class="im im-phone"></i> 831-968-6409</a>
         <a href=""><i class="im im-mail"></i> dinbandhuhelpfoundation@gmail.com</a>
-        <a href="" class="Top-genral-navgation-btns f jc ac"> donate now</a> 
-        <a href="" class="Top-genral-navgation-btns f jc ac"> join us</a> 
+        <a href="{{ route('user.donateUs') }}" class="Top-genral-navgation-btns f jc ac"> donate now</a> 
+        <a href="{{ route('user.joinAsMember') }}" class="Top-genral-navgation-btns f jc ac"> join us</a> 
 
     </div>
     
 </nav>
 
 <nav class="Top-main-navigation-Container f ac">
-    <a href="" class="Top-main-navigation-logo-link"><img src="{{ asset('images/fullLogo.svg') }}" alt=""></a>
+    <a href="{{ route('root') }}" class="Top-main-navigation-logo-link"><img src="{{ asset('images/fullLogo.svg') }}" alt=""></a>
 
     <i class="im im-menu slider-btn"></i>
 
     <div class="Top-main-navigation-sidelink-container f ja ac ">
-        <a href="" class="home-link selected f jc ac">home <i class="im im-angle-down"></i></a>
+        <a href="{{ route('root') }}" class="home-link selected f jc ac">home <i class="im im-angle-down"></i></a>
         <div class="Top-navigation-sidelinks f jc ac">
             <div class="home-link f jc ac">events <i class="im im-angle-down"></i></div>
             <div class="Top-navigation-dropdown">
@@ -73,20 +73,22 @@
             <div class="Top-navigation-dropdown">
                 <ul>
                    {{-- drop down for members --}}
-                   <a href="/user/otherMembers/Chhattisgarh/116"><li class="f ac"><i class="im im-users"></i>our advisor</li></a>
-                   <a href="/user/otherMembers/Chhattisgarh/116"><li class="f ac"><i class="im im-user-male"></i>cheaf community members</li></a>
-                   <a href="/user/otherMembers/Chhattisgarh/116"><li class="f ac"><i class="im im-user-circle"></i>sub community members</li></a>
+                   <a href="/user/otherMembers/Chhattisgarh/116#advis"><li class="f ac"><i class="im im-users"></i>advisory committee</li></a>
+                   <a href="/user/otherMembers/Chhattisgarh/116#core"><li class="f ac"><i class="im im-user-male"></i>chief committee members</li></a>
+                   <a href="/user/otherMembers/Chhattisgarh/116#sub"><li class="f ac"><i class="im im-user-circle"></i>sub committee members</li></a>
+                   <a href="/user/otherMembers/Chhattisgarh/116#execu"><li class="f ac"><i class="im im-user-circle"></i>executive members</li></a>
+                   <a href="/user/otherMembers/Chhattisgarh/116#volen"><li class="f ac"><i class="im im-user-circle"></i>our volenteer members</li></a>
                    <a href="{{ route('user.showStates') }}"><li class="f ac"><i class="im im-user-circle"></i>others states members</li></a>
 
+
                    @can('SuperAndAdmin')
-                   <hr>
-                   <a href="{{ route('admin.showallStates') }}"><li class="f ac">location / members</a></li>
+                   <a href="{{ route('admin.showallStates') }}"><li class="f ac"><i class="im im-location"></i>location / members</a></li>
                    @endcan
                 </ul>
             </div>
         </div>
         <div class="Top-navigation-sidelinks f jc ac">
-            <div class="home-link f jc ac">donate us <i class="im im-angle-down"></i></div>
+            <a href="{{ route('user.joinAsMember') }}" class="home-link f jc ac">join us <i class="im im-angle-down"></i></a href="">
             
         </div>
         <div class="Top-navigation-sidelinks f jc ac">
@@ -112,7 +114,7 @@
                    <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                   <li>
+                   <li class="f ac">
                        
                                     <i class="im im-sign-out"></i>
                        {{ __('Logout') }}
@@ -124,23 +126,76 @@
                        @csrf
                    </form>
 
-                   <a href="{{ route('user.showmyprofile') }}"><li class="f ac">my profile</li></a>
+                   <a class="my-profile-btn"><li class="f ac">my profile</li></a>
                    @endguest
+
+                   @can('managePost')
+                       <a href="{{ route('admin.postOptions') }}"><li class="f ac">post Option</li></a>
+                   @endcan
 
                    @can('SuperAndAdmin')
                    <a href="{{ route('adminuioptions.index') }}"><li class="f ac"><i class="im im-picture-o"></i>user interface options</li></a>
-                   <a href="{{ route('admin.showallusers','user') }}"><li class="f ac"><i class="im im-users"></i>all members details</li></a>
-                   <a href="{{ route('admin.makeNotifiaction') }}"><li class="f ac">make new notification</li></a>
+                   {{-- <a href="{{ route('admin.makeNotifiaction') }}"><li class="f ac"><i class="im im-bell"></i>notification section</li></a> --}}
                    @endcan
                 </ul>
             </div>
+
+            
         </div>
     </div>
+
+
+
+    @if (auth()->user())
+
+    <div class="my-profile-container f jc ac">
+            <div class="my-profile-card">
+                <div class="my-profile-banner-container f jc ac">
+                    <img src="{{ asset('images/fullLogo.svg') }}" alt="" class="my-profile-benner-image">
+                    <div class="hide-profile-btn f jc ac">
+                        <i class="im im-x-mark"></i>
+                    </div>
+                </div>
+                <div class="my-profile-details-container">
+
+                    @if (auth()->user()->approved)
+                    <p class="profile-status">verified member of dinbandhu help foundation<i class="im im-check-mark"></i></p>
+                        @else
+                    <p class="profile-status">please verify your profile by joining us</p>
+
+                    @endif
+
+                    <div class="profile-pic-container backgroundImage" style="background-image:url('@if(auth()->user()->profilepic){{ asset(auth()->user()->profilepic) }}@endif')">
+                 
+                <form action="{{ route('user.changeProfile') }}" method="post" id="changeProfile" enctype="multipart/form-data">
+                   @csrf
+                    <input type="file" name="profilepic" id="profile-pic" style="display: none" accept="image/x-png,image/gif,image/jpeg">
+                    <label for="profile-pic" class="upload-image-btn f jc ac"><i class="im im-cloud-upload"></i></label>
+                </form>
+                </div>
+
+                    <div class="profile-deatil-title f ac">
+                        <strong class="profile-text-title">name</strong>{{ auth()->user()->name }}
+                    </div>
+                    <div class="profile-deatil-title f ac">
+                        <strong class="profile-text-title">number</strong>{{ auth()->user()->number }}
+
+                    </div>
+                    <div class="profile-deatil-title f ac">
+                        <strong class="profile-text-title">email</strong>{{ auth()->user()->email }}
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    @endif
+
 </nav>
 
 <div class="black-background">
 
 </div>
+
 
 
 
@@ -150,19 +205,30 @@
 
 <!-- bottom footer starts from here -->
 
-    <div class="Botton-notification-btn f jc ac">
-        <img src="{{ asset('images/notificationBell.svg') }}" alt="">
+@auth
+<div class="Botton-notification-btn f jc ac">
+    <img src="{{ asset('images/notificationBell.svg') }}" alt="">
+</div>
+
+<div id="notification-box-container">
+    <div class="notifiaction-box-title f jc ac">
+        <i class="im im-bell-active"></i> notifications <i class="im im-x-mark-circle" id="hide-notification-Box-btn"></i>
     </div>
 
-    <div id="notification-box-container">
-        <div class="notifiaction-box-title f jc ac">
-            <i class="im im-bell-active"></i> notifications <i class="im im-x-mark-circle" id="hide-notification-Box-btn"></i>
-        </div>
+    <ul>
+        @if (auth()->user() && auth()->user()->approved)
+        <li class="notificaiton-list-items f jc ac"><img src="{{ asset('images/templateBell.svg') }}" alt="">your profile is now approved thank you for showing support</li>
+        @endif
+        @foreach ($notificationList as $notefication)
+        <a href="{{ $notefication->link }}"><li class="notificaiton-list-items f jc ac"><img src="{{ asset('images/templateBell.svg') }}" alt="">{{ $notefication->notification }}</li></a>
+            
+        @endforeach
+    </ul>
+</div>
+@endauth
 
-        <ul>
-            <a href="#"><li class="notificaiton-list-items f jc ac"><img src="{{ asset('images/templateBell.svg') }}" alt=""> a new user is avinash vishwakarma just signed in approve the user </li></a>
+    <div class="total-visitior-container">
 
-        </ul>
     </div>
 
     <div class="bottom-Footer-container" style="background-image: url('{{ asset('images/footerBackgroundImage.png') }}');">
@@ -200,23 +266,23 @@
                     </div>
 
                     <div class="footer-details cap">
-                        <a href=""> <i class="im im-key"></i> login</a>
+                        <a href="{{ route('login') }}"> <i class="im im-key"></i> login</a>
                     </div>
 
                     <div class="footer-details cap">
-                        <a href=""><i class="im im-users"></i>create new account</a>
+                        <a href="{{ route('register') }}"><i class="im im-users"></i>create new account</a>
                     </div>
 
                     <div class="footer-details cap">
-                        <a href=""><i class="im im-user-circle"></i>join us as member </a>
+                        <a href="{{ route('user.joinAsMember') }}"><i class="im im-user-circle"></i>join us as member </a>
                     </div>
 
                     <div class="footer-details cap">
-                        <a href=""> <i class="im im-award"></i> donate us </a>
+                        <a href="{{ route('user.donateUs') }}"> <i class="im im-award"></i> donate us </a>
                     </div>
 
                     <div class="footer-details cap">
-                        <a href=""><i class="im im-info"></i>about us</a>
+                        <a href="{{ route('aboutus') }}"><i class="im im-info"></i>about us</a>
                     </div>
                     
                 </div>
@@ -230,15 +296,14 @@
                     </div>
 
                     <div class="footer-socialmedia-links f ja ac">
-                        <a href=""><i class="im im-youtube"></i></a>
-                        <a href=""><i class="im im-whatsapp"></i></a>
-                        <a href=""><i class="im im-instagram"></i></a>
-                        <a href=""><i class="im im-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCHM3Ksoi8q2vpgCrTaZEPhg"><i class="im im-youtube"></i></a>
+                        <a href="www.instagram.com/dinbandhu_help_foundation"><i class="im im-instagram"></i></a>
+                        <a href="https://twitter.com/DinbandhuHelp?s=09"><i class="im im-twitter"></i></a>
                     </div>
 
                     <div class="footer-socialmedia-links f ja ac">
-                        <a href=""><i class="im im-paperplane"></i></a>
-                        <a href=""><i class="im im-phone"></i></a>
+                        <a href="https://t.me/joinchat/AAAAAE4EVI39XIVgIxDgKA"><i class="im im-paperplane"></i></a>
+                        <a href="tel:8319686409"><i class="im im-phone"></i></a>
                         
                     </div>
 

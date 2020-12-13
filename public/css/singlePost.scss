@@ -8,6 +8,7 @@
 
     min-height: 100vh;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.466);
+    padding-bottom: 2%;
 }
 
 .single-Post-thumbnail{
@@ -16,7 +17,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid red;
 }
 
 .single-post-title{
@@ -105,7 +105,6 @@
 .single-post-comments-box{
     width: 90%;
     min-height: 5vw;
-    border: 1px solid red;
     margin: 3% auto;
 }
 
@@ -113,6 +112,29 @@
     text-transform: capitalize;
     font-family: 'Playfair Display SC', serif !important;
     margin-left: 5%;
+}
+
+.post-comment-user-profile{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.508);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.post-comment-text-box{
+    width: 80%;
+    height: auto;
+    strong{
+    font-family: 'Playfair Display SC', serif !important;
+    }
+
+    p{
+        text-transform: capitalize;
+        margin-top: 1%;
+    }
 }
 @media only screen and (max-width: 1000px) {
 
@@ -128,6 +150,10 @@
 
 @media only screen and (max-width: 600px) {
 
+    .post-comment-text-box{
+        width: 70%;
+    }
+
     .single-Post-main-container{
         width: 95%;
     }
@@ -137,7 +163,6 @@
     }
 
     .single-post-reach-container{
-        border: 1px solid red;
         width: 80%;
         margin-top: 5%;
     }

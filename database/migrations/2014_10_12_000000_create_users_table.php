@@ -26,6 +26,8 @@ class CreateUsersTable extends Migration
             $table->boolean('approved')->nullable()->default(false);
             $table->rememberToken();
             $table->timestamps();
+            $table->boolean('joined')->nullable();
+            $table->integer('numbering')->default(0);
         });
     }
 

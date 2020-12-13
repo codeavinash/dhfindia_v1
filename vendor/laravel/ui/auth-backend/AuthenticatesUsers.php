@@ -20,9 +20,8 @@ trait AuthenticatesUsers
     public function showLoginForm()
     {
 
-        $eventList = PostCategory::all();
 
-        return view('auth.login',['eventList'=>$eventList]);
+        return view('auth.login');
     }
 
     /**

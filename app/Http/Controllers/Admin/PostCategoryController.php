@@ -38,26 +38,13 @@ class PostCategoryController extends Controller
     public function store(Request $request)
     {
         if(PostCategory::where('name',$request->name)->exists()){
-            return "this name exist in database";
+            return redirect()->back()->with(['carError'=>"car name already exist"]);
         }else{
-
-            if($request->hasfile('thumbnailUrl')){
-                $image = $request->file('thumbnailUrl');
-                $name = rand(10,10000).$image->getClientOriginalName();
-                $deltinationPath = public_path('/networkingFiles/images/categoryImages/');
-                $image->move($deltinationPath,$name);
-                $dbPath = '/networkingFiles/images/categoryImages/'.$name;
-                
-            };
-
             PostCategory::create([
                 'name'=>$request->name,
-                'thumbnailUrl'=>$dbPath,
                 'shortDescription'=>$request->shortDescription
             ]);
-
-             return redirect()->route('user.showallevents');
-
+             return redirect()->back()->with(['catSuccess'=>true]);
         }
     }
 

@@ -11,10 +11,19 @@
 .top-paralax-title{
     font-family: 'Playfair Display SC', serif !important;
     position: absolute;
-    bottom: 4%;
+    bottom: 12%;
     left: 5%;
     text-transform: capitalize;
     font-size: 35px;
+}
+
+.top-paralax-short-d{
+    font-family: 'Playfair Display SC', serif !important;
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    text-transform: capitalize;
+    font-size: 15px;
 }
 
 .single-post-display-container{
@@ -100,6 +109,44 @@
     color: #ffffff79;
     cursor: not-allowed;
     
+}
+
+.admin-options{
+    width: 50%;
+    height: 40px;
+}
+
+.admin-btns-post{
+    padding: 0 5%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    i{
+        font-size: 13px;
+        margin-right: 5px;
+    }
+}
+
+
+.update{
+    background: rgb(0, 206, 0);
+}
+
+.delete{
+    background: rgb(255, 36, 36);
+    cursor: pointer;
+}
+
+.notification-box-post{
+    width: 80%;
+    height: 40px;
+    background: rgba(255, 0, 0, 0.548);
+    color: #ffffff;
+    padding-left: 3%;
+    margin: 3% auto;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width: 1000px) {

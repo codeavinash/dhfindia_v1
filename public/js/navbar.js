@@ -1,3 +1,4 @@
+
 $('.Top-navigation-sidelinks').mouseover(function(){
    let dropdownList =  $(this).find('li');
    let dropdownBtn = $(this).children()[0];
@@ -38,4 +39,22 @@ $('.slider-btn').click(()=>{
 $('.black-background').click(()=>{
    $('.Top-main-navigation-sidelink-container').removeClass('slide-navigation');
    $('.black-background').removeClass('show-black-background');
+});
+
+
+
+$('.my-profile-btn').click(()=>{ 
+   $('.my-profile-container').addClass('show-profile');
+
+});
+
+$('.hide-profile-btn').click(function (e) { 
+   $('.my-profile-container').removeClass('show-profile');
+});
+
+
+$('#profile-pic').change(()=>{
+
+   $('#changeProfile').submit();
+
 });

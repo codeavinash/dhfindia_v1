@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\StatesDistricts;
 use App\Models\UserSkill;
 use App\Models\Notification;
+use App\Models\ContactUs;
 
 class userController extends Controller
 {
@@ -31,7 +32,13 @@ class userController extends Controller
     public function showSinglePost($id){
         $post = Post::where('id',$id)->firstOrFail();
         $likes = $post->alllikes()->get();
-        $comments = $post->comments()->get();
+        $comments = $post->comments()->orderBy('id', 'DESC')->get();
+
+        foreach ($comments as $key => $value) {
+            $userid =  $value->userid;
+            $value->userprofile = User::where('id',$userid)->first()->profilepic;
+            $value->username = User::where('id',$userid)->first()->name;
+        }
         $eventCatagoryList = PostCategory::all();
         if(auth()->user()){
             $currentUserLike = $post->alllikes()->where('user_id',auth()->user()->id)->first();
@@ -43,23 +50,45 @@ class userController extends Controller
     }
 
     public function addcomment( Request $request, $id){
-        $username = auth()->user()->name;
+
+
+        $userid = auth()->user()->id;
         Post::find($id)->first()->comments()->create([
-            'userName'=>$username,
+            'userid'=>$userid,
             'userComment'=> $request->commentBox
         ]);
+
+        $CommentCount = count(Post::find($id)->first()->comments()->get());
+
+        $post = Post::find($id)->first();
+        $post->likes = $CommentCount;
+        $post->save();
+
+
          return redirect()->back()->with('message','your comment is added and you can see it after we approve it');
     }
 
     public function addLike($id){
-        $userId = auth()->user()->id;
-        $likes = Post::where('id',$id)->first()->alllikes()->get()->where('user_id',"1")->first();
-        if($likes == null){
-            Post::where('id',$id)->first()->alllikes()->create(['user_id'=>$userId]);
+        // adding likes to a single post 
+        // checking this user has liked or not 
+        $user =  auth()->user()->id;
+        $likeCheck = Post::find($id)->alllikes()->where('user_id',$user)->first();
+        if($likeCheck){
+            $likeCheck->delete();
         }else{
-            $likes->delete();
+            $postLike = Post::find($id)->alllikes();
+            $postLike->create([
+                "user_id"=>$user
+            ]);
         }
-        return redirect()->back();
+
+        // adding the like count to post table
+
+        $post = Post::find($id)->first();
+        $likecount = $post->alllikes()->count();
+        $post->likes = $likecount;
+        $post->save();
+        return redirect()->back()->with("like",true);
     }
 
 
@@ -86,42 +115,67 @@ class userController extends Controller
     } 
 
     public function showMembersOther($state , $dis_id){
-        $members = CountryStates::where('stateName',$state)->first()->districts()->where('id',$dis_id)->first()->members()->where('approved',1)->get();
+        $members = CountryStates::where('stateName',$state)->first()->districts()->where('id',$dis_id)->first()->members()->where('approved',1)->orderBy('numbering', 'asc')->get();
+        $membersCount = $members->count();
         $advisors = $members->where('position','advisor');
         $core_members = $members->where('position','core_members');
         $subCommunityMember = $members->where('position','sub_members');
         $executive_member = $members->where('position','executive_member');
-        return view('Users.showMembers',['advisors'=>$advisors,'coreMembers'=>$core_members,'subMembers'=>$subCommunityMember,'totalmembers'=>$members,'executive_member'=>$executive_member]);
+        $volenteer_member = $members->where('position','volenteer');
+
+        $memberDetails = ['totalmembers' => $membersCount ,'advisor'=>$advisors,'core_mem'=>$core_members,'sub_mem'=>$subCommunityMember,'exe_mem'=>$executive_member,'vol_mem'=>$volenteer_member];
+        
+        
+
+        return view('Users.showMembers',['memberDetails'=>$memberDetails]);
     }
 
-    public function getDistricts(Request $request){
-        $districts =  CountryStates::find($request->state_id)->districts()->get();
+    public function getDistricts($id){
+        $districts =  CountryStates::find($id)->districts()->get();
         return $districts;
     }
 
 
     public function joinusForm(Request $request){
-        
-        // find the district and and than add the user
 
-        // return $request->file();
 
         $user_id = auth()->user()->id;
 
         $user = User::find($user_id);
 
+        if($user->joined){
+            return redirect()->back()->with(['alreadyExist'=>true]);
+        }
+
         $user->dis_id = $request->District;
+        $user->joined = true;
+
+        if($file = $request->file('profilePic')){
+            if($user->profilepic){
+                unlink(public_path($user->profilepic));
+            }
+            // add new one
+            $file_name = $user->id.rand(10,10000).$user->name.'.jpg';
+            $file->move(public_path('/networkingFiles/images/userImages/'),$file_name);
+            $user->profilepic = '/networkingFiles/images/userImages/'.$file_name;
+        }
         
         $user->save();
+
+
 
         if( $file = $request->file('paymentProof')){
                 $file_extention = $file->extension();
                 $file_name = $user->id.rand(10,10000).$user->name.'.'.$file_extention;
                 $file->move(public_path('/networkingFiles/images/paymet_barcode/'),$file_name);
                 $user->payment()->create([
-                    'paymentResept'=>'networkingFiles/images/paymet_barcode/'.$file->getClientOriginalName()
+                    'paymentResept'=>'networkingFiles/images/paymet_barcode/'.$file_name
                 ]);
         }
+
+        
+
+
         $user->skills()->create([
             'dob'=> $request->dateOfBirth,
             'education'=>$request->education,
@@ -162,6 +216,37 @@ class userController extends Controller
     public function donateUs(){
         return view('Users.donateUs');
     }
+
+    public function contactUsSubmit(Request $request){
+
+        // create a new notification
+
+        $validated = $request->validate([
+            'name'=> "required|max:255",
+            'number'=>'required|max:10|min:10',
+            'message'=>'required'
+        ]);
+
+
+        ContactUs::create([
+            'name'=>$request->name,
+            'number'=>$request->number,
+            'message'=>$request->message
+        ]);
+
+
+        Notification::create([
+            'type'=>'admin',
+            'notification' => 'a user wants to contact us click to view details',
+            'link'=> route('admin.contactUsTable')
+        ]);
+
+        return redirect()->back()->with(['contactsus'=>true]);
+
+    }
+
+
+     
 
 }
 

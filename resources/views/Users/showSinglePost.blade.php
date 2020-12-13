@@ -1,4 +1,4 @@
-@extends('layouts.app',['eventList'=> $eventList])
+@extends('layouts.app')
 
 @section('haederFiles')
     <link rel="stylesheet" href="{{ asset('css/singlePost.css') }}">
@@ -11,7 +11,7 @@
 
         <h1 class="single-post-title">{{ $post->name }}</h1>
         <div class="single-post-reach-container f ja ac">
-            <a href=""><i class="im im-facebook-like"></i> like @if (count($likes))
+            <a href="{{ route('user.addLike',$post->id) }}"><i class="im im-facebook-like"></i> like @if (count($likes))
                 <strong>: {{ count($likes) }}</strong>
                 @else
                 
@@ -47,12 +47,17 @@
 
         <h4 class="single-post-comment-title">post comments :-</h4>
 
-        <div class="single-post-comments-box">
-            
-        </div>
-        <div class="single-post-comments-box">
+        
+        @foreach ($comments as $comment)
+        <div class="single-post-comments-box f ja">
+                <div class="post-comment-user-profile" style="background-image: url('{{ $comment->userprofile }}')"></div>
+                <div class="post-comment-text-box">
+                    <strong>{{ $comment->username }}</strong>
+                    <p>{{ $comment->userComment }}</p>
+                </div> 
 
         </div>
+        @endforeach
 
     </div>
     

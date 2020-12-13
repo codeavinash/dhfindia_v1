@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\HomeData;
 
 class UserTableSeeder extends Seeder
 {
@@ -33,5 +34,14 @@ class UserTableSeeder extends Seeder
         ]);
 
         $user->roles()->attach($superAdmin);
+
+
+
+        HomeData::create([
+            'donators'=>000,
+            'mission'=>000,
+            'volenter'=>000,
+            'totalVisitos'=>000
+        ]);
     }
 }

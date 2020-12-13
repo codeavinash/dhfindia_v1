@@ -60,7 +60,7 @@ class PostController extends Controller
 
         $postCatagory->posts()->save($post);
 
-         return redirect()->route('user.showallevents');
+        return redirect()->back()->with(['postSussess'=>true]);
 
 
     }
@@ -73,7 +73,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $post = post::find($id);
+        return view('Admin.Posts.editPost',['post'=>$post]);
     }
 
     /**
@@ -84,8 +86,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = post::find($id);
-        return view('Admin.Posts.editPost',['post'=>$post]);
+
+        return $id;
+        // $post = post::find($id);
+        // return view('Admin.Posts.editPost',['post'=>$post]);
     }
 
     /**
@@ -110,6 +114,8 @@ class PostController extends Controller
             $deltinationPath = public_path('/networkingFiles/images/PostImages/');
             $image->move($deltinationPath,$name);
             $dbPath = '/networkingFiles/images/PostImages/'.$name;
+        }else {
+            $dbPath = $post->thumbnailUrl;
         };
 
         $post->thumbnailUrl = $dbPath;
@@ -139,7 +145,7 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect()->route('user.showallevents');
+        return redirect()->back()->with(['PostDeletedsuccess'=>true]);
         // delete the post
     }
 
@@ -156,5 +162,10 @@ class PostController extends Controller
         $comment->status = 'disapprove';
         $comment->save();
         return redirect()->back()->with('success','comment disapproved ');
+    }
+
+    public function postOptions(){
+        $postCats = PostCategory::all();
+        return view('Admin.Posts.postOption',['postCatagory'=>$postCats]);
     }
 }

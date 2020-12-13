@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Notification;
+use App\Models\ContactUs;
+
 
 
 class UserNotification extends Controller
@@ -46,9 +48,17 @@ class UserNotification extends Controller
     }
 
     public function deleteNotification($id){
-
         Notification::find($id)->delete();
         return redirect()->back()->with('success','notification deleted successfully');
+    }
 
+    public function contactsuTable(){
+        $datas = ContactUs::orderBy('id','DESC')->get();
+        return view('Admin.contactData',['contactDatas'=>$datas]);
+    }
+
+    public function deleteContactus($id){
+        ContactUs::find($id)->delete();
+        return redirect()->back()->with(['deleted'=>true]);
     }
 }

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\BannerImage;
+use App\Models\HomeData;
+use App\Models\imageGalary;
+
 
 class uiController extends Controller
 {
@@ -15,14 +18,15 @@ class uiController extends Controller
      */
     public function index()
     {
-        return view('Admin.uiViews.uiOptions');
-    }
-    public function showall(){
 
+        $homedata = HomeData::all()->first();
+        $galaryImges = imageGalary::all();
         $BannerImges = BannerImage::orderBy('id', 'DESC')->get();
 
-        return view('Admin.uiViews.showall',['bannerImages'=>$BannerImges]);
+
+        return view('Admin.uiViews.uiOptions',['homedata'=>$homedata,'galaryImages'=>$galaryImges,'bannerImages'=>$BannerImges]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -49,7 +53,10 @@ class uiController extends Controller
             $image->move($deltinationPath,$name);
             $dbPath = '/networkingFiles/images/bannerImage/'.$name;
             BannerImage::create(['imageUrl'=>$dbPath]);
-             return redirect()->route('admin.showallimage');
+            return redirect()->back()->with(['successMessage'=>'banner image added successfully']);
+
+        }else{
+             return redirect()->back()->with(['error'=>'no file found']);
         };
     }
 
@@ -99,6 +106,40 @@ class uiController extends Controller
         $removingPath = public_path($bannerImage->imageUrl);
         unlink($removingPath);
         $bannerImage->delete();
-         return redirect()->route('admin.showallimage');
+        return redirect()->back()->with(['successMessage'=>'image deleted successfully']);
+    }
+
+    public function changeCounter(Request $request){
+
+        $validatedData = $request->validate([
+            'donatornumber' => ['required',],
+            'missionnumber' => ['required'],
+            'Volunteernumber' => ['required']
+        ]);
+
+        $home = HomeData::all()->first();
+
+        $home->donators = $request->donatornumber;
+        $home->mission = $request->missionnumber;
+        $home->volenter = $request->Volunteernumber;
+        $home->save();
+
+        return redirect()->back()->with(['successMessage'=>'counter updated successfully']);
+    }
+
+    public function deleteImgeGalary($id){
+        imageGalary::find($id)->delete();
+        return redirect()->back()->with(['successMessage'=>'image deleted successfully']);
+    }
+    
+
+    public function addimageGalary(Request $request){
+
+        imageGalary::create([
+            'imageUrl'=>$request->imageUrl
+        ]);
+
+        return redirect()->back()->with(['successMessage'=>'image added successfully']);
+
     }
 }

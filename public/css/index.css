@@ -378,6 +378,90 @@
   width: auto;
 }
 
+.total-visitor-container{
+  width: 100%;
+  height: 20vh;
+  background: orange;
+  font-family: 'Playfair Display SC', serif !important;
+  font-size: 25px;
+  color: #fff;
+}
+
+.contact-us-container{
+  width: 100%;
+  height: 50vw;
+  margin: 5% 0;
+  background-attachment: fixed;
+}
+
+.form-container{
+  width: 40%;
+  height: 80%;
+}
+
+.form-title{
+  width: 100%;
+  height: 10%;
+  font-family: 'Playfair Display SC', serif !important;
+  color: #fff;
+  font-size: 25px;
+}
+
+.contactUs-form-Box label, .contactUs-form-Box input, .contactUs-form-Box textarea {
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+  outline: none;
+}
+
+.contactUs-form-Box label {
+  margin-top: 5%;
+  text-transform: uppercase;
+  font-family: 'Playfair Display SC', serif !important;
+  color: #ffffff;
+}
+
+.contactUs-form-Box input, .contactUs-form-Box textarea {
+  margin-top: 2%;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  resize: none;
+  padding: 0 3%;
+}
+
+.contactUs-form-Box input {
+  height: 40px;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+.contactUs-form-Box textarea {
+  height: 30%;
+  padding: 3%;
+}
+
+.contactUs-form-btn {
+  display: block;
+  width: 40%;
+  height: 40px;
+  border: none;
+  background: orange;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin: 5% auto;
+}
+
+.contact-added{
+  color: #ffffff;
+  font-family: 'Playfair Display SC', serif !important;
+  text-align: center;
+}
+
+.red{
+  color: red;
+  font-weight: normal;
+}
+
 @media only screen and (max-width: 1000px) {
   .Overflow-main-container {
     width: 95%;
@@ -418,6 +502,15 @@
 }
 
 @media only screen and (max-width: 600px) {
+
+  .contact-us-container{
+    height: 100vw;
+  }
+
+  .form-container{
+    width: 80%;
+  }
+
   .swiper-container {
     height: 70vw !important;
   }

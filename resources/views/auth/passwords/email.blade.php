@@ -1,14 +1,26 @@
 @extends('layouts.app')
 
-@section('headerFiles')
-    <link rel="stylesheet" href="{{ asset('css/conponents/forgotPassword.css') }}">
+@section('haederFiles')
+    <style>
+        .formBox{
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        input{
+            width: 80vw;
+            height:40px;
+            margin-bottom: 3%;
+        }
+    </style>
 @endsection
 
-@section('mianContent')
+@section('mainContent')
 
 
 
-                    <div class="formBox">
+                    <div class="formBox f jc ac">
                         <h1 class=" f-jc-ac">forgot password</h1>
 
                     @if (session('status'))

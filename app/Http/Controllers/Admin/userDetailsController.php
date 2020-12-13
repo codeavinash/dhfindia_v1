@@ -13,17 +13,21 @@ use App\Models\Notification;
 class userDetailsController extends Controller
 {
     
-    public function showall($role){
+    public function showall($distic){
         
-        // $users = Role::where('name',$role)->first()->users()->get();
-        $role = Role::where('name',$role)->first();
-        if($role =='superAdmin'){
-            return response()->view('errors.custom', [], 404);
-        }else{
-            $users = $role->users()->get();
-            $allRoles = Role::all();
-            return view('Admin.Users.showUserdetails',['users'=>$users,'currentrole'=>$role,'allRoles'=>$allRoles]);
-        }
+            $users = StatesDistricts::find($distic)->members()->get();
+            return view('Admin.Users.showUserdetails',['users'=>$users]);
+        
+    }
+
+    public function updateRank(Request $request, $id){
+
+       $user =  User::find($id);
+       $user->numbering = $request->reankNumber;
+       $user->save();
+
+       return redirect()->back()->with(['updated'=>true]);
+
     }
 
     public function updateUser($userId){
@@ -39,7 +43,7 @@ class userDetailsController extends Controller
 
     public function showallStates(){
         $states = CountryStates::all();
-        return view('Users.showStates',['states'=>$states]);
+        return view('Users.showStates',['states'=>$states,"admin"=>true]);
     }
 
     public function showLocation($type,$id,$action){
@@ -76,7 +80,7 @@ class userDetailsController extends Controller
     public function showDistricts($state){
         $districts = CountryStates::findOrFail($state)->districts()->get();
         $currentState = CountryStates::where('id',$state)->first();
-        return view('Users.districtTable',['districts'=>$districts,'state'=>$currentState]);
+        return view('Users.showDistricts',['districts'=>$districts,'state'=>$currentState]);
     }
 
     public function notifiactions(){
@@ -98,9 +102,9 @@ class userDetailsController extends Controller
     public function validateUser($id){
 
         $user = User::find($id);
+        $distic = StatesDistricts::find($user->dis_id);
         
         if($user->dis_id && $distic->state_id){
-            $distic = StatesDistricts::find($user->dis_id);
             $state = CountryStates::find($distic->state_id);
         }else{
             $distic = false;
@@ -163,5 +167,8 @@ class userDetailsController extends Controller
         return redirect()->back();
 
     }
+
+    
+
 
 }

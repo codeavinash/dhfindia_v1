@@ -1,72 +1,64 @@
-@extends('layouts.app',[ 'eventList' =>$eventList]);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login | Dinbandhu help foundation | the best foundation to help you</title>
+    <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css">
+    <link rel="stylesheet" href="{{ asset('css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Auth/loginPage.css') }}">
 
-
-
-@section('mainContent')
-
-<section class="f-jc-ac">
-    <div class="formbox">
-
-        <h3 >
-            login
-        </h3>
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            
-                <label for="email" >{{ __('E-Mail Address') }}</label>
-                <input id="email" type="email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                @error('email')
-                            <strong class="errorText">{{ $message }}</strong>
-                @enderror
-            
-            
-
-            
-                <label for="password">{{ __('Password') }}</label>
-                <input id="password" type="password"  name="password" required>
-                @error('password')
-                    <strong class="errorText">{{ $message }}</strong>
-                @enderror
-            
-            
-            
-            
-             
-                <input  type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                <label  for="remember">
-                    {{ __('Remember Me') }}
-                </label>
-            
-            <button type="submit" class="submitBtn">
-                {{ __('Login') }}
-            </button>
-           
-                    @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                    @endif
-        
-        </form>
-        <div class="createNew f-jc-ac">
-            <a href="{{ route('register') }}" class="f-jc-ac">create new account</a>
-        </div>
-    </div>
+    <script src="{{ asset('js/paswordField.js') }}" defer></script>
+</head>
+<body>
     
+    <section class="container-Section backgroundImage f jc ac" style="background-image: linear-gradient(rgba(20, 20, 20, 0.904),rgba(20, 20, 20, 0.904)),url('{{ asset('images/backgroundimageThree.jpg') }}')">
+        <div class="login-form-container">
+            <div class="logo-image-container f jc ac">
+                <img src="{{ asset('images/fullLogo.svg') }}" alt="">
+            </div>
 
-</section>
+            <h1 class="form-heading">log in</h1>
+            @error('email')
+            <p class="short-text-para error-color">{{ $message }}</p>
+            @else
+            @error('password')
+            <p class="short-text-para error-color">{{ $message }}</p>
+            @else
+            <p class="short-text-para">join us for more information</p>
+            @enderror
 
-@if (Session::has('joinUsMessage'))
-    <div class="globalNotification f-jc-ac">
-        <div class="notContainer f-jc-ac">
-            {{ Session::get('joinUsMessage') }}
+            
+            @enderror
+
+            
+
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <label for="email" class="input-label">Email/Username</label>
+                <input type="email" class="input-field" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                <label for="email" class="input-label">Password</label>
+                <div class="password-field-container f ac">
+                    <input type="password" class="password-filed" name="password" >
+                    <i class="im im-eye eye-icon" id="eye-btn"></i>
+                </div>
+
+                <div class="form-btn-container f jb ac">
+                        <div class="f ja ac checkBox">
+                            <input type="checkbox"  name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <a href="{{ route('password.request') }} " class="forgot-link">Forgot Your Password?</a>
+                        <button type="submit" class="submit-btn">login</button>
+                </div>
+            </form>
+
+            <a href="{{ route('register') }}" class="create-new-account-btn f jc ac">create new account</a>
+
         </div>
-        <i class="im im-x-mark-circle cancleBtn"></i>   
-    </div>
-@endif
+    </section>
 
-@endsection
-
-
+</body>
+</html>

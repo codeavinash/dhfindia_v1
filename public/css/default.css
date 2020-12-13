@@ -38,6 +38,10 @@ body {
       justify-content: space-around;
 }
 
+.jb{
+  justify-content: space-between;
+}
+
 .ac {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -60,4 +64,36 @@ body {
 .cap {
   text-transform: capitalize;
 }
+
+.backgroundImage{
+  background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.green{
+  color: rgb(117, 255, 117);
+}
+
+.red{
+  color: red;
+}
+
+
+.page-title-container{
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.page-title-text{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    font-family: 'Playfair Display SC', serif !important;
+    color: #ffffff;
+    font-size: 25px;
+}
+
 /*# sourceMappingURL=default.css.map */

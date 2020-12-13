@@ -1,65 +1,85 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create new account | register for getting new notification | dinbandhu help foundation</title>
+    <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css">
+    <link rel="stylesheet" href="{{ asset('css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Auth/loginPage.css') }}">
 
-@section('headerFiles')
+    <script src="{{ asset('js/paswordField.js') }}" defer></script>
 
-<link rel="stylesheet" href="{{ asset('css/pages/login.css') }}">
-
-@endsection
-
-@section('mianContent')
-
-
-<section class="f-jc-ac">
-    <div class="formbox extra">
-
-        <h3 >
-            create new account
-        </h3>
-
-        <form method="post" action="{{ route('register') }}" class="registerBox ">
-            @csrf
-
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                    @error('name')
-                        <span>
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-        
-                        @error('email')
-                                    <span>
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-
-                        <label for="number" class="col-md-4 col-form-label text-md-right">phone number</label>
-                        <input id="number" type="text" name="phoneNumber"  required autocomplete="number">
-
-                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                        
-
-                        @error('password')
-                                    <span>
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-
-                        <button type="submit" class="submitBtn">
-                            {{ __('Register') }}
-                        </button>
-
-                    </form>
-    </div>
+</head>
+<body>
     
-</section>  
- 
-@endsection
+    <section class="container-Section backgroundImage register-form f jc ac" style="background-image: linear-gradient(rgba(20, 20, 20, 0.904),rgba(20, 20, 20, 0.904)),url('{{ asset('images/headerImageOne.jpeg') }}')">
+        <div class="login-form-container">
+            <div class="logo-image-container f jc ac">
+                <img src="{{ asset('images/fullLogo.svg') }}" alt="">
+            </div>
+
+            <h1 class="form-heading">create new account</h1>
+            @error('email')
+            <p class="short-text-para error-color">{{ $message }}</p>
+            @else
+            @error('password')
+            <p class="short-text-para error-color">{{ $message }}</p>
+            @else
+
+            @error('name')
+            <p class="short-text-para error-color">{{ $message }}</p>      
+            @else
+
+            @error('phoneNumber')
+            <p class="short-text-para error-color">{{ $message }}</p>      
+                @else
+            <p class="short-text-para">join us for more information</p>
+
+            @enderror
+
+            @enderror
+            @enderror
+
+            
+            @enderror
+
+            
+
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
+                <label for="fullname" class="input-label">full name</label>
+                <input id="fullname" type="text" class="input-field" name="name" required autocomplete="name" autofocus>
+
+                <label for="email" class="input-label">e - mail</label>
+                <input id="email" type="email" class="input-field" name="email"  required autocomplete="email" autofocus>
+
+                <label for="number" class="input-label " >contact number</label>
+                <input id="number" type="number" class="input-field contact-input"  name="phoneNumber"  required  autofocus>
 
 
+                <label for="email" class="input-label">Password</label>
+                <div class="password-field-container f ac">
+                    <input type="password" class="password-filed" name="password" >
+                    <i class="im im-eye eye-icon" id="eye-btn"></i>
+                </div>
+
+                <label for="email" class="input-label">re-enter Password</label>
+                <div class="password-field-container f ac">
+                    <input type="password" class="re-password-filed" name="password_confirmation" >
+                    <i class="im im-eye eye-icon" id="re-eye-btn"></i>
+                </div>
+
+                <div class="form-btn-container f jb ac">
+                        <button type="submit" class="submit-btn">register</button>
+                </div>
+            </form>
+
+            <a href="{{ route('login') }}" class="create-new-account-btn f jc ac">login now</a>
+
+        </div>
+    </section>
+
+</body>
+</html>

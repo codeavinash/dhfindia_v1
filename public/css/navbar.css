@@ -133,6 +133,11 @@
           box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.575);
 }
 
+.Top-navigation-dropdown a {
+  overflow: hidden !important;
+  width: 80%;
+}
+
 .Top-navigation-dropdown li {
   width: 100%;
   height: 0px;
@@ -162,6 +167,121 @@
   left: auto;
   right: 0 !important;
 }
+
+.my-profile-btn{
+  cursor: pointer;
+}
+
+/* MY PROFILE STYLING START */
+
+.my-profile-container{
+  position: fixed;
+  left: 0;
+  bottom: -110vh;
+  width: 100%;
+  height: 110vh;
+  background: rgba(0, 0, 0, 0.712);
+  z-index: 500 !important;
+  transition: 0.2s all;
+}
+
+
+.show-profile{
+  bottom: 0;
+}
+
+
+.my-profile-card{
+  width: 40%;
+  height: 70%;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.my-profile-banner-container{
+  width: 100%;
+  height: 20%;
+  background: #f0f0f0;
+  border-radius: 5px;
+  position: relative;
+}
+
+
+.my-profile-banner-container img{
+  height: 60%;
+}
+
+
+.my-profile-details-container{
+  width: 100%;
+  height: 80%;
+}
+
+.profile-pic-container{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 3% auto;
+  background: #ececec;
+  position: relative;
+}
+
+.upload-image-btn{
+  width: 50px;
+  height: 50px;
+  background: orange;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #ffffff;
+}
+
+.profile-deatil-title{
+  width: 80%;
+  height: 40px;
+  margin: 2% auto;
+  margin-bottom: 6%;
+  text-transform: capitalize;
+}
+
+.profile-status{
+  text-transform: capitalize;
+  text-align: center;
+  margin: 2% auto;
+}
+
+.im-check-mark{
+  color: rgb(41, 41, 255);
+  font-size: 15px;
+  margin-left: 2%;
+}
+
+.profile-text-title{
+  text-transform: capitalize;
+  margin-right: 2%;
+  color: rgb(31, 31, 31);
+  font-family: 'Playfair Display SC', serif !important;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.212);
+}
+
+.hide-profile-btn{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: orange;
+  right: 10%;
+  cursor: pointer;
+}
+
+.hide-profile-btn i{
+  font-size: 12px;
+}
+
+
+/* MY PROFILE STYLING ENGING */
 
 .bottom-Footer-container {
   width: 100%;
@@ -347,6 +467,11 @@
 }
 
 @media only screen and (max-width: 1000px) {
+
+  .my-profile-card{
+    width: 80%;
+  }
+
   .slider-btn {
     display: block;
     position: absolute;
@@ -449,6 +574,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+
+  .my-profile-benner-image{
+    width: 50%;
+    height: auto;
+  }
+
   .Top-genral-navitaion-container {
     height: 40vw;
   }

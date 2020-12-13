@@ -1,0 +1,223 @@
+.member-container-section{
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.members-section-links{
+    width: 100%;
+    height: 5vh;
+    position: sticky;
+    left: 0;
+    top: 5vw;
+    background: orange;
+    z-index: 99;
+    a{
+        padding: 0 10px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: capitalize;
+        color: #ffffff;
+        transition: 0.2s all;
+    }
+
+    a:hover{
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.411);
+    }
+
+    a:active{
+        box-shadow:inset 0px 2px 6px rgba(0, 0, 0, 0.411) ;
+    }
+}
+
+.no-members-found-notification{
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 166, 0, 0.419);
+}
+
+.no-member-notification-text{
+    width: 50%;
+    height: 20vh;
+    color: #ffffff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.479);
+    p{
+        font-size: 30px;
+        font-family: 'Playfair Display SC', serif !important;
+        color: rgba(0, 0, 0, 0.433);
+
+    }
+}
+
+.no-member-icon{
+    font-size: 100px;
+}
+
+.member-container-title{
+    font-family: 'Playfair Display SC', serif !important;
+    margin-top: 3%;
+    text-decoration: underline;
+}
+
+.member-card-holder{
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.no-member-found-message{
+    width: 60%;
+    height:80vh;
+    margin: 0 auto;
+    color: #ffffff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.479);
+    p{
+        font-size: 30px;
+        font-family: 'Playfair Display SC', serif !important;
+        color: rgba(0, 0, 0, 0.433);
+
+    }
+
+}
+
+.member-cardes{
+    width: 25%;
+    margin: 5% 1%;
+    height: 40vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.466);
+
+    
+}
+
+.member-info-box{
+    width: 90%;
+    height: 20%;
+    background: #ffffff;
+    color:rgb(0, 0, 0);
+    position: absolute;
+    transform: translate(-50%);
+    top: 90%;
+    left: 50%;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.481);
+
+    strong{
+        display: block;
+        margin-top: 3%;
+        text-transform: capitalize;
+        font-family: 'Playfair Display SC', serif !important;
+
+    }
+
+    p{
+        text-transform: capitalize;
+        font-family: 'Playfair Display SC', serif !important;
+        margin-top: 3%;
+    }
+}
+
+.members-section-links-show-hide-btn{
+    display: none;
+}
+
+.page-title-conteiner{
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.page-title-text{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display SC', serif !important;
+    color: #ffffff;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
+
+@media only screen and (max-width: 1000px) {
+ 
+   .member-container-section{
+    width: 90%;
+   } 
+
+.member-cardes{
+    width: 40%;
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+ 
+    .member-container-section{
+     width: 90%;
+    } 
+ 
+    .member-cardes{
+     width: 80%;
+     height: 50vh;
+     margin-left:10%;
+     margin-left:10%;
+
+    }
+
+    .no-member-found-message{
+        width: 100%;
+        margin: 0;
+        p{
+            font-size: 15px;    
+        }
+        i{
+            font-size: 15px;
+        }
+    }
+
+.member-container-title{
+    font-size: 20px;
+}
+
+.members-section-links {
+    height: auto;
+    flex-wrap: wrap;
+    background: black;
+    top: -100%;
+    transition: 0.2s all;
+    a{
+        width: 100%;
+        height: 40px;
+    }
+}
+
+.members-section-links-show-hide-btn{
+    display: flex;
+    height: 42px;
+    background: rgb(54, 54, 54);
+    color: #ffffff;
+    position: sticky;
+    top: 20vw;
+    left: 0;
+    z-index: 99;
+    transition: 0.5s all;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+.show-section-links{
+    top: 28vw;
+}
+
+
+}
+ 
+

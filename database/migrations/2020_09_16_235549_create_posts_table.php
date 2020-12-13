@@ -21,6 +21,8 @@ class CreatePostsTable extends Migration
             $table->string('thumbnailUrl');
             $table->text('description');
             $table->integer('likes')->nullable();
+            $table->integer('comments')->default(0);
+            
             $table->timestamps();
         });
     }

@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phoneNumber' => ['required','min:10','max:10']
         ]);
     }
 
@@ -67,7 +68,7 @@ class RegisterController extends Controller
     {
         $role = Role::where('name','user')->first();
 
-
+        
 
         $user = User::create([
             'name' => $data['name'],
