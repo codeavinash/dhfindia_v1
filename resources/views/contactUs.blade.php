@@ -36,7 +36,7 @@
                     <label for="textMessage">message :@error('message')
                         <strong class="red">{{ $message }}</strong>
                         @enderror</label>
-                    <textarea name="message" id="textMessage" required></textarea>
+                    <textarea name="message" id="textMessage" style="height: 150px" required></textarea>
 
             <button class="contactUs-form-btn">submit</button>
 
@@ -58,7 +58,7 @@
             <strong class="contact-info contact-number">911-190-6974</strong>
             <strong class="contact-info contact-number">810-372-7914</strong>
             <strong class="contact-info">email address</strong>
-            <strong class="contact-info contact-number">dinbandhuhelpfoundation@gmail.com </strong>
+            <strong class="contact-info contact-number email-address">dinbandhuhelpfoundation@gmail.com </strong>
 
             <strong class="contact-info">address</strong>
             <strong class="contact-info contact-number">village - chichirda , Post-Saida (Chakarbhata), Dist-Bilaspur (C.G) </strong>

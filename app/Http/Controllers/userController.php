@@ -186,8 +186,10 @@ class userController extends Controller
         Notification::create([
             'type'=>'admin',
             'notification' => 'a new user named '.$user->name.' just joind review the payment',
-            'link'=> route('admin.validateUser',$user_id)
+            'link'=> "/admin/validateUser/".$user_id
         ]);
+
+        return route('admin.validateUser',$user_id);
 
         return redirect()->route('root')->with('success','we will verify your requsest and contact you');
     }

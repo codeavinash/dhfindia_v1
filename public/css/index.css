@@ -219,7 +219,7 @@
 
 .post-Swipre-container {
   width: 80%;
-  height: 65%;
+  height: 60%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -503,12 +503,19 @@
 
 @media only screen and (max-width: 600px) {
 
+.three-text-box-container a {
+
+  position: relative;
+  margin-top: 5%;
+  width: 40%;
+}
+
   .contact-us-container{
-    height: 100vw;
+    height: 150vw;
   }
 
   .form-container{
-    width: 80%;
+    width: 95%;
   }
 
   .swiper-container {
@@ -575,5 +582,9 @@
   .Slide-Post-read-Btn {
     margin-top: 3%;
   }
+
+  .increaseHeight{
+    height: 120vh;
+}
 }
 /*# sourceMappingURL=index.css.map */

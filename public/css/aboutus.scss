@@ -39,3 +39,74 @@
         margin-bottom: 2%;
     }
 }
+
+.joining-charges-deatils{
+    width: 100%;
+    border: 1px solid red;
+    min-height: 100vh;
+    padding: 5% 10%;
+}
+
+.title-text-strong{
+    display: block;
+    font-size: 25px;
+    color: orange;
+}
+
+.text-box-detalis{
+    p{
+        margin-top: 1%;
+    }
+    img{
+        width: 30%;
+        margin-top: 3%;
+    }
+}
+
+.top-margin{
+    margin-top: 3% !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .aboutUs-text{
+        width: 90%;
+        font-size: 13px;
+    }
+
+    .aboutUs-text-list{
+        font-size: 13px;
+        li{
+            margin-top: 5%;
+        }
+    }
+
+
+.aboutUs-content-container{
+    width: 90%;
+}
+
+.joining-charges-deatils{
+    padding: 5%;
+}
+
+.title-text-strong{
+font-size: 15px;
+}
+
+.text-box-detalis{
+    p{
+        margin-top: 5%;
+        font-size: 12px;
+    }
+
+    img{
+        width: 100%;
+    }
+}
+
+.top-margin{
+    margin-top: 6% !important;
+}
+
+}

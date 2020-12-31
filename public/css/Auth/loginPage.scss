@@ -139,6 +139,9 @@ label[for=remember-me]{
 }
 
 @media only screen and (max-width : 1000px){
+
+
+
     .container-Section{
         height: 100vw;
     }
@@ -152,6 +155,17 @@ label[for=remember-me]{
 }
 
 @media only screen and (max-width : 600px){
+
+    .submit-btn{
+        width: 100%;
+        height: 40px;
+    }
+
+    .form-btn-container{
+        flex-wrap: wrap;
+        height: auto;
+    }
+
     .container-Section{
         height: 180vw;
     }
@@ -159,11 +173,30 @@ label[for=remember-me]{
         width: 95%;
     }
     .checkBox{
-        width: 30%;
+        width: 40%;
+        margin-bottom: 5%;
     }
 
     .register-form{
         height: 200vw;
     }
+
+    .forgot-link{
+        margin-bottom: 5%;
+    }
+
+    .register-one{
+        margin-bottom: 20%;
+    }
+
+    .logo-image-container{
+        height: auto;
+        img{
+            width: 80%;
+            height: auto;
+        }
+    }
+
+
 }
 

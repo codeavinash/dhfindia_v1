@@ -161,6 +161,7 @@
 
 .Top-navigation-drop-now {
   height: 40px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.445);
 }
 
 .Right-dropdown {
@@ -575,11 +576,18 @@
 
 @media only screen and (max-width: 600px) {
 
+  .copyRight-text{
+    width: 40%;
+  }
+
   .my-profile-benner-image{
     width: 50%;
     height: auto;
   }
 
+  .slider-btn{
+    box-shadow: none;
+  }
   .Top-genral-navitaion-container {
     height: 40vw;
   }
@@ -623,6 +631,19 @@
   }
   .show-notifiaction-box {
     width: 80% !important;
+  }
+
+  .my-profile-card{
+    width: 95%;
+  }
+
+  .home-link{
+    position: relative;
+  }
+
+  .home-link i{
+    position: absolute;
+    right: 5%;
   }
 }
 /*# sourceMappingURL=navbar.css.map */

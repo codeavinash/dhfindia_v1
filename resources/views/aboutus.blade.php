@@ -71,6 +71,36 @@ The Foundation has tied up with Nehru Yuva Kendra Sangathan (NYKS) , and some ot
             <li>Diffrent Programs with NYKS.</li>
         </ol>
     </p>
+
+    <div id="joining-details" class="section-title-container backgroundImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.39),rgb(0, 0, 0)),url('{{ asset('images/HeaderImagesfour.jpg') }}')">
+        <h3 class="section-title-text">joining procedure and details</h3>
+    </div>
+    <div class="joining-charges-deatils">
+        <strong class="title-text-strong">महत्वपूर्ण जानकारी</strong>
+        दीनबंधु हेल्प फॉउंडेशन की वेबसाइट (मेंबर्स डीटेल्स) में केवल उन्हीं आवेदकों का प्रोफ़ाइल फोटो प्रदर्शित होगा जिनके द्वारा नीचे दिए 3 विकल्पों में से किसी 1 विकल्प पर सदस्यता ली गई हो।
+
+        <div class="text-box-detalis">   
+        <strong class="title-text-strong top-margin">विकल्प (1) Volunteer Membership </strong>
+        <p> दीनबंधु हेल्प फॉउंडेशन की टीम में शामिल होने के लिए आवेदक को प्रथम 1 वर्ष का सदस्यता शुल्क भुगतान करना होगा, जिसकी सदस्यता राशि मात्र 100 रुपये निर्धारित किया गया हैं। </p> 
+        <p>नोट: आवेदक के सदस्यता वर्ष समाप्त होने के पश्चात उन्हें पुनः अगले वर्ष का सदस्यता शुल्क भुगतान करना होगा, जिसकी सदस्यता राशि मात्र 100 रुपये संस्था द्वारा निर्धारित किया गया हैं।</p>
+        <img src="{{ asset('images/Tables/VOL_TABLE.jpg') }}" alt="">
+        </div>
+
+        <div class="text-box-detalis">   
+            <strong class="title-text-strong top-margin">विकल्प (2) Board executive member </strong>
+            <p>दीनबंधु हेल्प फॉउंडेशन की मुख्य कार्यकारी समिति में शामिल होने के लिए आवेदक को प्रथम माह का सदस्यता शुल्क भुगतान करना होगा, जिसकी सदस्यता शुल्क 100 रुपये निर्धारित किया गया हैं।</p> 
+            <p>नोट: आवेदक के सदस्यता माह समाप्त होने के पश्चात उन्हें पुनः दूसरे माह का सदस्यता शुल्क भुगतान करना आवश्यक होगा जिसकी सदस्यता शुल्क 100 रुपये निर्धारित किया गया हैं। 
+                (निर्धारित समय के पूर्व सदस्यता शुल्क भुगतान नहीं करने पर मुख्य कार्यकारी समिति से निष्कासित कर स्वयं सेवक सदस्य समिति में रूपांतरण किया जायेगा। भुगतान के पश्चात पुनः मुख्य कार्यकारी समिति में रूपांतरण किया जायेगा।)</p>
+                <img src="{{ asset('images/Tables/execu_table.jpg') }}" alt="">
+        
+            </div>
+
+        <div class="text-box-detalis">   
+            <strong class="title-text-strong top-margin">विकल्प (3) Board Petron Member</strong>
+            <p> दीनबंधु हेल्प फॉउंडेशन की मुख्य संरक्षक/पालक समिति में शामिल होने के लिए आवेदक को प्रथम वर्ष का सदस्यता शुल्क भुगतान करना होगा, जिसकी सदस्यता शुल्क संस्था द्वारा 51,00 रुपये निर्धारित किया गया हैं।</p> 
+            <img src="{{ asset('images/Tables/board_Table.jpg') }}" alt="">
+        </div>
+    </div>
     
 
 @endsection

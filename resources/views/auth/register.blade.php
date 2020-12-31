@@ -15,7 +15,7 @@
 <body>
     
     <section class="container-Section backgroundImage register-form f jc ac" style="background-image: linear-gradient(rgba(20, 20, 20, 0.904),rgba(20, 20, 20, 0.904)),url('{{ asset('images/headerImageOne.jpeg') }}')">
-        <div class="login-form-container">
+        <div class="login-form-container register-one">
             <div class="logo-image-container f jc ac">
                 <img src="{{ asset('images/fullLogo.svg') }}" alt="">
             </div>

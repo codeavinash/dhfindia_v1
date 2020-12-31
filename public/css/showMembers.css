@@ -54,6 +54,10 @@
   height: 20vh;
   color: #ffffff;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.479);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .no-member-notification-text p {
@@ -165,6 +169,11 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .no-member-notification-text p {
+    text-align: center;
+    width: 95vw;
+    font-size: 12px;
+  }
   .member-container-section {
     width: 90%;
   }

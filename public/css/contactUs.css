@@ -125,11 +125,18 @@
     height: 50vw;
   }
   .detail-container-box {
-    width: 95%;
-    height: 150vw;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20%;
   }
   .image-box {
     display: none;
+  }
+  .email-address {
+    font-size: 14px;
+  }
+  .contactUs-form-Box {
+    padding-bottom: 10%;
   }
 }
 /*# sourceMappingURL=contactUs.css.map */

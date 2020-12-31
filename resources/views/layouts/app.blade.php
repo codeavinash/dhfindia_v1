@@ -33,9 +33,10 @@
 <nav class="Top-genral-navitaion-container">
     <div class="Top-ganral-navigation-social-links f ja ac">
         <a href="https://www.facebook.com/Arunsahu3288/"><i class="im im-facebook"></i></a>
-        <a href="www.instagram.com/dinbandhu_help_foundation"><i class="im im-instagram"></i></a>
+        <a href="http://instagram.com/dinbandhu_help_foundation"><i class="im im-instagram"></i></a>
         <a href="https://www.youtube.com/channel/UCHM3Ksoi8q2vpgCrTaZEPhg"><i class="im im-youtube"></i></a>
         <a href="https://twitter.com/DinbandhuHelp?s=09"><i class="im im-twitter"></i></a>
+        <a href="https://maps.app.goo.gl/QYA7hQBjZpc3qmy8A"><i class="im im-location"></i></a>
     </div>
 
     <div class="Top-genral-navigation-contactDetails-Btns f ja ac">
@@ -88,8 +89,14 @@
             </div>
         </div>
         <div class="Top-navigation-sidelinks f jc ac">
-            <a href="{{ route('user.joinAsMember') }}" class="home-link f jc ac">join us <i class="im im-angle-down"></i></a href="">
-            
+            <div  class="home-link f jc ac">join us <i class="im im-angle-down"></i></div>
+            <div class="Top-navigation-dropdown">
+                    <ul>
+                       {{-- drop down for our details --}}
+                       <a href="/aboutus#joining-details"><li class="f ac"><i class="im im-task-o"></i>joining details</li></a>
+                       <a href="{{ route('user.joinAsMember') }}"><li class="f ac"><i class="im im-id-card"></i>join us</li></a>
+                    </ul>
+            </div>
         </div>
         <div class="Top-navigation-sidelinks f jc ac">
             <div class="home-link f jc ac">our details <i class="im im-angle-down"></i></div>
@@ -297,26 +304,26 @@
 
                     <div class="footer-socialmedia-links f ja ac">
                         <a href="https://www.youtube.com/channel/UCHM3Ksoi8q2vpgCrTaZEPhg"><i class="im im-youtube"></i></a>
-                        <a href="www.instagram.com/dinbandhu_help_foundation"><i class="im im-instagram"></i></a>
+                        <a href="http://instagram.com/dinbandhu_help_foundation"><i class="im im-instagram"></i></a>
                         <a href="https://twitter.com/DinbandhuHelp?s=09"><i class="im im-twitter"></i></a>
                     </div>
 
                     <div class="footer-socialmedia-links f ja ac">
                         <a href="https://t.me/joinchat/AAAAAE4EVI39XIVgIxDgKA"><i class="im im-paperplane"></i></a>
                         <a href="tel:8319686409"><i class="im im-phone"></i></a>
+                        <a href="https://maps.app.goo.gl/QYA7hQBjZpc3qmy8A"><i class="im im-location"></i></a>
                         
                     </div>
-
                 </div>
         </div>
     </div>
     <div class="bottom-Coppyright-bar">
         <div class="copyRight-text f jc ac">
-            Copyright ©2020 avinash vishwakarma. All Rights Reserved
+            <a href="https://helpsquare.in">Copyright ©2020 avinash vishwakarma. All Rights Reserved</a>
         </div>
 
         <div class="copyRight-text-two f jc ac">
-            <a href="tel:7000789511">contact us to make your best website</a>
+            <a href="tel:7000789511">click here to call us to make your website</a>
         </div>
     </div>
 

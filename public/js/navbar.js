@@ -16,6 +16,7 @@ if(screen.width < 600){
    $('.Top-navigation-sidelinks').click(function(){
       let dropdownList =  $(this).find('li');
       $(dropdownList).toggleClass('Top-navigation-drop-now'); 
+      dropdownList
    });
 }
 
@@ -54,7 +55,5 @@ $('.hide-profile-btn').click(function (e) {
 
 
 $('#profile-pic').change(()=>{
-
    $('#changeProfile').submit();
-
 });

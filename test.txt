@@ -947,3 +947,33 @@
 
 <a href="{{ route('adminuioptions.create') }}">add a new banner</a>
         <a href="{{ route('admin.showallimage') }}">show all banner</a>
+
+
+
+    //==============================================================welcome pages
+
+    @extends('layouts.app',['eventList'=> $eventList])
+
+@section('haederFiles')
+    <!-- adding page specific style and javascript -->
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <script src="{{ asset('js/index.js') }}" defer></script>
+@endsection
+
+@section('mainContent')
+
+
+
+
+
+
+
+
+
+
+
+  
+
+=========================================
+
+@endsection
