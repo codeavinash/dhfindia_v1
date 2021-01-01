@@ -141,6 +141,10 @@
   text-transform: uppercase;
 }
 
+#payment {
+  color: #ffffff;
+}
+
 @media only screen and (max-width: 1000px) {
   .form-detail-container {
     -ms-flex-wrap: wrap;
