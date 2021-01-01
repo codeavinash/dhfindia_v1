@@ -189,7 +189,6 @@ class userController extends Controller
             'link'=> "/admin/validateUser/".$user_id
         ]);
 
-        return route('admin.validateUser',$user_id);
 
         return redirect()->route('root')->with('success','we will verify your requsest and contact you');
     }
