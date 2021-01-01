@@ -146,7 +146,7 @@
                   <option value="core_members">core_members</option>
                   <option value="sub_members">sub_members</option>
                   <option value="executive_member">executive member</option>
-                  <option value="volenteer">executive member</option>
+                  <option value="volenteer">volenteer member</option>
               </select>
 
               <button>change</button>

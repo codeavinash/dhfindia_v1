@@ -95,7 +95,7 @@
 
                 <div class="member-info-box">
                     <strong>{{ $item->name }}</strong>
-                    <p>advisor</p>
+                    <p>chief committee member</p>
                 </div>
 
             </div>
@@ -129,7 +129,7 @@
 
                 <div class="member-info-box">
                     <strong>{{ $item->name }}</strong>
-                    <p>advisor</p>
+                    <p>sub committee member</p>
                 </div>
 
             </div>
@@ -163,7 +163,7 @@
 
                 <div class="member-info-box">
                     <strong>{{ $item->name }}</strong>
-                    <p>advisor</p>
+                    <p>executive member</p>
                 </div>
 
             </div>
@@ -197,7 +197,7 @@
 
                 <div class="member-info-box">
                     <strong>{{ $item->name }}</strong>
-                    <p>volunteer Members</p>
+                    <p>volunteer Member</p>
                 </div>
 
             </div>
